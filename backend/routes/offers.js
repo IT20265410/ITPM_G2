@@ -33,33 +33,32 @@ router.route('/add').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-//retrieve function 
+//get record by using ID 
 router.route('/:id').get((req, res) => {
-    Addvehicle.findById(req.params.id)
-        .then(addvehicle => res.json(addvehicle))
+    Offer.findById(req.params.id)
+        .then(offer => res.json(offer))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-//delete function
+//delete 
 router.route('/:id').delete((req, res) => {
-    Addvehicle.findByIdAndDelete(req.params.id)
-        .then(() => res.json('Vehicle details deleted.'))
+    Offer.findByIdAndDelete(req.params.id)
+        .then(() => res.json('Offer details deleted.'))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
 //update function
 router.route('/update/:id').post((req, res) => {
-    Addvehicle.findById(req.params.id)
-        .then(addvehicle => {
-            addvehicle.name = req.body.name;
-            addvehicle.vehicleImage = req.body.vehicleImage;
-            addvehicle.price = Number(req.body.price);
-            addvehicle.description = req.body.description;
+    Offer.findById(req.params.id)
+        .then(offer => {
+            offer.offerName = req.body.offerName;
+            offer.offerDescription = req.body.offerDescription;
+            offer.specialNotice = req.body.specialNotice;
+            offer.startingDate = Date.parse(req.body.startingDate);
+            offer.endingDate = Date.parse(req.body.endingDate);
            
-          
-
-            addvehicle.save()
-                .then(() => res.json('Vehicle details updated!'))
+            offer.save()
+                .then(() => res.json('Offer details updated!'))
                 .catch(err => res.status(400).json('Error: ' + err));
         })
         .catch(err => res.status(400).json('Error: ' + err));
