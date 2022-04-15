@@ -1,0 +1,93 @@
+#addRegisterForm{
+	max-width: 800px;
+  padding: 16px;
+  background-color: rgba(226, 242, 255, 0.5);
+}
+.addCovidPage{
+	background: url("https://wallpaperaccess.com/full/11207.jpg") no-repeat center center fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    min-height: 900px;
+}
+
+#addCovidPage{
+	background: url("https://wallpaperaccess.com/full/11207.jpg") no-repeat center center fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    min-height: 900px;
+}
+
+.addcovidTitle{
+	color: rgb(4, 12, 231);
+	margin: auto;
+	width: 60%;
+	padding: 55px;
+}
+#searchRegisterVaccineForm{
+    max-width: 700px;
+    height:650px;
+    padding: 16px;
+    background-color: rgba(226, 242, 255, 0.5);
+  }
+   
+  #searchTfeeForm{
+    max-width: 700px;
+    height:600px;
+    padding: 16px;
+    background-color: rgba(226, 242, 255, 0.5);
+  }
+
+  .displayTable {
+    border-collapse: collapse;
+    width: 50%;
+}
+  
+.displayTable ,tr,td{
+    border: 1px solid rgb(34, 32, 32);
+    text-align: left;
+}
+  
+td{
+    padding:15px;
+}
+  
+tr:nth-child(even)
+{
+   background-color: #8fdbbf;
+}
+   
+tr:nth-child(odd)
+{
+   background-color: #e5f3f7;
+}
+th:nth-child(odd){
+    background-color:#e5f1ab;
+}
+th:nth-child(even){
+    background-color: #e5f1ab;
+}
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #FFD700;
+    color: rgb(80, 42, 35);
+}
+.detailsBox
+{
+    position:absolute;
+    top:12%;
+    left:10%;
+   
+    width:1050px;
+    height:920px;
+    padding:80px 40px;
+    box-sizing:border-box;
+    background:rgba(0,0,0,.5);
+}
+
+.textColour {
+    color: rgb(0, 0, 0);
+}
