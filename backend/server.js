@@ -19,8 +19,10 @@ connection.once('open', () => {
 })
 
 const addvehicleRouter = require('./routes/addvehicle');
+const offersRouter = require('./routes/offers');
 
 app.use('/addvehicle', addvehicleRouter);  
+app.use('/offers', offersRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
