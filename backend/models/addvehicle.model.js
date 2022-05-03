@@ -18,7 +18,6 @@ const addvehicleSchema = new Schema({
     },
     vehicleImage: {
         type: String,
-        required: true,
     },
     price: {
         type: Number,
@@ -28,6 +27,8 @@ const addvehicleSchema = new Schema({
         type: String,
         required: true,
         trim: true,
+        maxlength: 1000,
+        minlength: 20,
     },
 }, {
     timestamps: true,
