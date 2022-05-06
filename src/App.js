@@ -4,7 +4,6 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import CreateOffer from "./components/pages/offer/createOffer";
 import UpdateOffer from "./components/pages/offer/updateOffer";
 import ViewOffer from "./components/pages/offer/viewOffer";
-// import New from "./components/pages/offer/new";
 import CreateFaq from "./components/pages/faq/createFaq";
 import ViewFaq from "./components/pages/faq/viewFaq";
 import UpdateFaq from "./components/pages/faq/updateFaq";
@@ -19,10 +18,9 @@ function App() {
       <Route path="/viewOffer" component={ViewOffer} />
       <Route path="/updateOffer/:id" component={UpdateOffer} />
       <Route path="/createOffer" component={CreateOffer} />
-      {/* <Route path="/createOffer" component={New} /> */}
       <Route path="/createFaq" component={CreateFaq} />
       <Route path="/viewFaq" component={ViewFaq} />
-      <Route path="/updateFaq" component={UpdateFaq} />
+       <Route path="/updateFaq/:id" component={UpdateFaq} />
       <Route path="/home" component={Home} />
     </Router>
   );
