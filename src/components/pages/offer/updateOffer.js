@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
+import "../vehicle.css";
+import swal from 'sweetalert';
 
-export default class CreateOffer extends Component {
+export default class UpdateOffer extends Component {
   constructor(props) {
     super(props);
 
     //binding data to the methods
-    this.onChangeOfferId = this.onChangeOfferId.bind(this);
     this.onChangeOfferName = this.onChangeOfferName.bind(this);
     this.onChangeOfferCode = this.onChangeOfferCode.bind(this);
     this.onChangeOfferDescription = this.onChangeOfferDescription.bind(this);
@@ -26,6 +27,35 @@ export default class CreateOffer extends Component {
       startingDate: new Date(),
       endingDate: new Date(),
     };
+  }
+
+  componentDidMount() {
+    axios
+      .get("http://localhost:5000/offers/" + this.props.match.params.id)
+      .then((response) => {
+        this.setState({
+          offerId: response.data.offerId,
+          offerName: response.data.offerName,
+          offerCode: response.data.offerCode,
+          offerDescription: response.data.offerDescription,
+          specialNotice: response.data.specialNotice,
+          startingDate: new Date(response.data.startingDate),
+          endingDate: new Date(response.data.endingDate),
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    // axios
+    //   .get("http://localhost:5000/offers/")
+    //   .then((response) => {
+    //     if (response.data.length > 0) {
+    //       this.setState({
+    //         offers: response.data.map((offer) => offer.offerId),
+    //       })
+    //     }
+    //   })
   }
 
   onChangeOfferId(e) {
@@ -87,33 +117,35 @@ export default class CreateOffer extends Component {
     console.log(offer);
 
     axios
-      .post("http://localhost:5000/offers/add", offer)
+      .post(
+        "http://localhost:5000/offers/update/" + this.props.match.params.id,
+        offer
+      )
       .then((res) => console.log(res.data));
 
-    alert("Offer Added Succesfully!");
-    window.location = "/";
+    swal("Offer Updated Succesfully");
+    window.location = "/viewOffer";
   }
 
-  displayOffer = (value) => () => {
-    console.log(value);
-  };
+  // displayOffer = (value) => () => {
+  //   console.log(value);
+  // };
 
   render() {
     return (
-      <div className="addOffer">
+      <div className="addCovidPage">
         <br />
-        <div className="container" id="">
-          <h3 className="addOffer">ADD NEW OFFER</h3>
+        <div className="container" id="addRegisterForm">
+          <h3 className="addcovidTitle">UPDATE OFFER DETAILS</h3>
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <label className="textColour">Offer ID: </label>
               <input
                 type="text"
-                required
+                disabled
                 className="form-control"
                 value={this.state.offerId}
                 onChange={this.onChangeOfferId}
-                placeholder="eg: OF001"
               />
             </div>
             <div className="form-group">
@@ -124,7 +156,6 @@ export default class CreateOffer extends Component {
                 className="form-control"
                 value={this.state.offerName}
                 onChange={this.onChangeOfferName}
-                placeholder="eg: New Year Sale"
               />
             </div>
             <div className="form-group">
@@ -135,18 +166,18 @@ export default class CreateOffer extends Component {
                 className="form-control"
                 value={this.state.offerCode}
                 onChange={this.onChangeOfferCode}
-                placeholder=""
+                disabled
               />
             </div>
             <div className="form-group">
               <label className="textColour">Offer Description: </label>
-              <textarea
+              <input
+                style={{ height: "100px" }}
+                type="text"
                 required
                 className="form-control"
-                rows="3"
                 value={this.state.offerDescription}
                 onChange={this.onChangeOfferDescription}
-                placeholder=""
               />
             </div>
 
@@ -157,12 +188,11 @@ export default class CreateOffer extends Component {
                 className="form-control"
                 value={this.state.specialNotice}
                 onChange={this.onChangeSpecialNotice}
-                placeholder=""
               />
             </div>
 
             <div className="form-group">
-              <label>Starting Date: </label>
+              <label className="textColour">Starting Date: </label>
               <div>
                 <DatePicker
                   selected={this.state.startingDate}
@@ -172,7 +202,7 @@ export default class CreateOffer extends Component {
             </div>
 
             <div className="form-group">
-              <label>Ending Date: </label>
+              <label className="textColour">Ending Date: </label>
               <div>
                 <DatePicker
                   selected={this.state.endingDate}
@@ -185,7 +215,7 @@ export default class CreateOffer extends Component {
             <div className="form-group">
               <input
                 type="submit"
-                value="ADD OFFER"
+                value="Update Offer"
                 className="btn btn-primary"
               />
             </div>
