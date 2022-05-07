@@ -127,7 +127,7 @@ export default class Viewcm extends Component {
                 
                    <center> <thead className="thead-light">
                         <tr id="tablist">
-                            <center><th className="viewlist"> Vehicle hire in Sri Lanka is not an easy way, with Ratha vahana.lk  you can enjoy vehicle rental in Sri Lanka at the coolest budget ways.</th></center>
+                            <center><th className="viewlist"> Vehicle hire in Sri Lanka is not an easy way to all, with Ratha vahana.lk  you can enjoy vehicle rental in Sri Lanka at the coolest budget ways.</th></center>
                             <center><th className="viewlist">you can enjoy vehicle rental in Sri Lanka at the coolest budget ways.</th></center>
                             <center><th className="viewlist">We believe in providing the highest level of services at the lowest price. 24/7 working time. So you can enjoy your ride anytime. </th></center>
 
