@@ -48,7 +48,7 @@ router.route('/:id').delete((req, res) => {
 });
 
 //update function
-router.route('/update/:id').post((req, res) => {
+router.route('/update/:id').put((req, res) => {
     Offer.findById(req.params.id)
         .then(offer => {
             offer.offerName = req.body.offerName;

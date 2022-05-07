@@ -8,7 +8,7 @@ const offerSchema = new Schema({
         required: true,
         unique: true,                    
         trim: true,
-        minlength: 3            
+        minlength: 5            
     },
     offerName: {
         type: String,

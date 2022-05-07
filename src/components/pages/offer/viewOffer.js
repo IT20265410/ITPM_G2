@@ -124,27 +124,6 @@ export default class ViewOffer extends Component {
     });
   }
 
-  // filterData(offers, searchKey) {
-  //   const result = offers.filter(
-  //     (offers) =>
-  //       offers.offerId.toLowerCase().includes(searchKey) ||
-  //       offers.offerName.toLowerCase().includes(searchKey) ||
-  //       offers.offerCode.toLowerCase().includes(searchKey) ||
-  //       offers.offerDescription.toLowerCase().includes(searchKey) ||
-  //       offers.specialNotice.toLowerCase().includes(searchKey)
-  //   );
-  //   this.setState({ offers: result });
-  // }
-
-  // handleSearchArea = (e) => {
-  //   const searchKey = e.currentTarget.value.toLowerCase();
-  //   axios.get("http://localhost:5000/offers").then((res) => {
-  //     if (res.data.success) {
-  //       this.filterData(res.data.existingEmployee, searchKey);
-  //     }
-  //   });
-  // };
-
   render() {
     return (
       <div className="addCovidPage">
@@ -170,19 +149,17 @@ export default class ViewOffer extends Component {
               <br />
               <br />
             </div>
-            <div className="col-3 buttons2" />
-            <div
-              className="col-3 search position-relative"
-              style={{ marginTop: "2px" }}
-            >
-              <i className="fa fa-search"></i>{" "}
-              <input
-                className="form-control"
-                type="Search"
-                placeholder="Search an Offer"
-                name="searchQuery"
-                onChange={this.handleSearchArea}
-              />
+            <div className="col-6 buttons2">
+              <div className="col-4 buttons" style={{ marginLeft: "500px" }}>
+                <Link
+                  to="/searchOffer"
+                  type="button"
+                  className="btn btn-success"
+                >
+                  Search Offer details
+                </Link>
+                <br />
+              </div>
             </div>
           </div>
           <br />
