@@ -41,7 +41,7 @@ router.route("/:id").delete((req, res) => {
 });
 
 //update function
-router.route("/update/:id").post((req, res) => {
+router.route("/update/:id").put((req, res) => {
   Faq.findById(req.params.id)
     .then((faq) => {
       faq.question = req.body.question;

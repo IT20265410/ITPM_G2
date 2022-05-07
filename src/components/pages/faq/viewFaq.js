@@ -134,19 +134,17 @@ export default class ViewFaq extends Component {
               <br />
               <br />
             </div>
-            <div className="col-3 buttons2" />
-            <div
-              className="col-3 search position-relative"
-              style={{ marginTop: "2px" }}
-            >
-              <i className="fa fa-search"></i>{" "}
-              <input
-                className="form-control"
-                type="Search"
-                placeholder="Search an FAQ"
-                name="searchQuery"
-                onChange={this.handleSearchArea}
-              />
+            <div className="col-6 buttons2">
+              <div className="col-4 buttons" style={{ marginLeft: "450px" }}>
+                <Link
+                  to="/searchFaq"
+                  type="button"
+                  className="btn btn-success"
+                >
+                  Search FAQ details
+                </Link>
+                <br />
+              </div>
             </div>
           </div>
           <br />

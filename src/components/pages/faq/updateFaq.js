@@ -75,8 +75,8 @@ export default class UpdateFaq extends Component {
     console.log(faq);
 
     axios
-      .post(
-        "http://localhost:5000/faqs/update" + this.props.match.params.id,
+      .put(
+        "http://localhost:5000/faqs/update/" + this.props.match.params.id,
         faq
       )
       .then((res) => console.log(res.data));

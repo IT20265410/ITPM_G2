@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import "../vehicle.css";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 
 export default class UpdateOffer extends Component {
   constructor(props) {
@@ -117,7 +117,7 @@ export default class UpdateOffer extends Component {
     console.log(offer);
 
     axios
-      .post(
+      .put(
         "http://localhost:5000/offers/update/" + this.props.match.params.id,
         offer
       )
@@ -156,6 +156,9 @@ export default class UpdateOffer extends Component {
                 className="form-control"
                 value={this.state.offerName}
                 onChange={this.onChangeOfferName}
+                pattern="[A-Za-z' ']{8,}"
+                title="Minimum characters length must be 8"
+                placeholder="Eg: New Year Sale"
               />
             </div>
             <div className="form-group">
@@ -178,6 +181,9 @@ export default class UpdateOffer extends Component {
                 className="form-control"
                 value={this.state.offerDescription}
                 onChange={this.onChangeOfferDescription}
+                pattern="[A-Za-z0-9' '%.]{10,}"
+                title="Minimum characters length must be 10"
+                placeholder="Eg: Shop with us and get up to 25% in this mid year. Click on the 'Contact Us' for more details. "
               />
             </div>
 
@@ -188,6 +194,9 @@ export default class UpdateOffer extends Component {
                 className="form-control"
                 value={this.state.specialNotice}
                 onChange={this.onChangeSpecialNotice}
+                pattern="[A-Za-z0-9' '%.]{10,}"
+                title="Minimum characters length must be 10"
+                placeholder="Eg: Be the among first 10 callers and get 5% off"
               />
             </div>
 
@@ -197,6 +206,7 @@ export default class UpdateOffer extends Component {
                 <DatePicker
                   selected={this.state.startingDate}
                   onChange={this.onChangeStartingDate}
+                  minDate={new Date()}
                 />
               </div>
             </div>
@@ -207,6 +217,7 @@ export default class UpdateOffer extends Component {
                 <DatePicker
                   selected={this.state.endingDate}
                   onChange={this.onChangeEndingDate}
+                  minDate={new Date()}
                 />
               </div>
             </div>
