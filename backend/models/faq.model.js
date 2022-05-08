@@ -19,6 +19,10 @@ const faqSchema = new Schema(
       required: true,
       trim: true,
     },
+    addDate: {
+      type: Date,
+      required: true,
+    },
   },
   {
     timestamps: true,

@@ -50,26 +50,26 @@
     text-align: left;
 }
   
-td{
+.table td{
     padding:15px;
 }
   
-tr:nth-child(even)
+.table tr:nth-child(even)
 {
    background-color: #e5f3f7;
 }
    
-tr:nth-child(odd)
+.table tr:nth-child(odd)
 {
    background-color: #e5f3f7;
 }
-th:nth-child(odd){
+.table th:nth-child(odd){
     background-color:#dcdfcb;
 }
-th:nth-child(even){
+.table th:nth-child(even){
     background-color: #dcdfcb;
 }
-th {
+.table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -103,8 +103,27 @@ hr {
     background-color: #fc0606;
   }
 
-  #but12{
-    margin-left: 330px;
-  }
+input:invalid {
+    border: 2px solid red;
+}
 
- 
+input{
+    border: 2px solid grey;
+}
+
+
+#offerTable {
+    border: 3px solid rgb(23, 6, 87); 
+    margin-left: -10px;
+    width: 100%;
+    background-image: url("../pages/customerSide/offers.jpg");
+    height: 350px;
+    background-size: cover;
+    font-size: larger;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.CustomerOffer {
+background-image: url("../pages/customerSide/back.png");
+}
