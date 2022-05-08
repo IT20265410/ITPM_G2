@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 //import './registerVaccine.css';
-import './vehicle.css';
+import '../vehicle.css';
 
 
 export default class RegisterTeam extends Component {

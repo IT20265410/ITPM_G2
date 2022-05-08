@@ -5,7 +5,7 @@ import swl from "sweetalert";
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
 
-import './vehicle.css';
+import '../vehicle.css';
 
 const Rentv = props => (
     <tr>

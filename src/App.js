@@ -24,48 +24,48 @@ import ViewOffer from "./components/pages/offer/viewOffer";
 import CreateFaq from "./components/pages/faq/createFaq";
 import ViewFaq from "./components/pages/faq/viewFaq";
 import UpdateFaq from "./components/pages/faq/updateFaq";
-import CustomerOffer from "./components/pages/customerSide/customerOffer";
-import CustomerFaq from "./components/pages/customerSide/customerFaq";
+import CustomerOffer from "./components/pages/offer_cs/customerOffer";
+import CustomerFaq from "./components/pages/offer_cs/customerFaq";
 import Home from "./components/homepage/home";
 import SearchBar from "./components/pages/offer/searchOffer";
 import SearchBarFaq from "./components/pages/faq/searchFaq";
 import Navbar from "./components/pages/navbar";
 
 
-import Addvehicle from "./components/pages/addvehicle"
-import Viewvehicle from "./components/pages/viewvehicle"
-import Editvehicle from './components/pages/editvehicle';
-import Searchvehicle from "./components/pages/searchvehicle";
-import Rentv from "./components/pages/rentv";
-import Viewrent from "./components/pages/viewrent";
-import Editrent from './components/pages/editrent';
+import Addvehicle from "./components/pages/vehicle/addvehicle"
+import Viewvehicle from "./components/pages/vehicle/viewvehicle"
+import Editvehicle from './components/pages/vehicle/editvehicle';
+import Searchvehicle from "./components/pages/vehicle/searchvehicle";
+import Rentv from "./components/pages/vehicle/rentv";
+import Viewrent from "./components/pages/vehicle/viewrent";
+import Editrent from './components/pages/vehicle/editrent';
 
 
 
-import Searchemployee from "./components/pages/searchemployee";
-import Searchteam from "./components/pages/searchteam";
-import Editp from "./components/pages/editp";
-import Edita from "./components/pages/edita";
-import Editm from "./components/pages/editm";
-import Viewp from "./components/pages/viewp";
-import Viewa from "./components/pages/viewa";
-import RegisterVaccine from "./components/pages/registerVaccine";
-import AboutUs from "./components/pages/aboutUs";
-import RegisterTeam from "./components/pages/registerTeam";
-import Viewm from "./components/pages/viewm";
-import Viewc from "./components/pages/viewc";
-import Viewcm from "./components/pages/viewcm";
+import Searchemployee from "./components/pages/staff/searchemployee";
+import Searchteam from "./components/pages/team/searchteam";
+import Editp from "./components/pages/staff/editp";
+import Edita from "./components/pages/aboutUs/edita";
+import Editm from "./components/pages/team/editm";
+import Viewp from "./components/pages/staff/viewp";
+import Viewa from "./components/pages/aboutUs/viewa";
+import RegisterVaccine from "./components/pages/staff/registerVaccine";
+import AboutUs from "./components/pages/aboutUs/aboutUs";
+import RegisterTeam from "./components/pages/team/registerTeam";
+import Viewm from "./components/pages/team/viewm";
+import Viewc from "./components/pages/aboutUs_cs/viewc";
+import Viewcm from "./components/pages/aboutUs_cs/viewcm";
 
 
-import AddCustomer from "./components/pages/create";
-import ViewCustomer from "./components/pages/customer-list";
-import EditCustomer from "./components/pages/Editcustomer";
-import SearchCustomer from './components/pages/searchCustomer';
-import AddContacts from './components/pages/create-contacts';  
-import ViewContact from './components/pages/contact-list';
-import EditContact from './components/pages/Editcontact';
-import SearchContact from "./components/pages/searchContact";  
-import ViewCustomerContact from './components/pages/customer-contact-list'
+import AddCustomer from "./components/pages/customer/create";
+import ViewCustomer from "./components/pages/customer/customer-list";
+import EditCustomer from "./components/pages/customer/Editcustomer";
+import SearchCustomer from './components/pages/customer/searchCustomer';
+import AddContacts from './components/pages/customer/create-contacts';  
+import ViewContact from './components/pages/customer/contact-list';
+import EditContact from './components/pages/customer/Editcontact';
+import SearchContact from "./components/pages/customer/searchContact";  
+import ViewCustomerContact from './components/pages/customer/customer-contact-list'
 
 
 // if (localStorage.token) {

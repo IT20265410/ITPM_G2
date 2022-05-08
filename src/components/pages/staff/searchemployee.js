@@ -4,22 +4,22 @@ import '../vehicle.css';
 
 function SearchBar() {
     const [search, setSearch] = useState('');
-    const [team, setTeam] = useState([]);
+    const [register, setRegister] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:4800/team/')
+        axios.get('http://localhost:4800/register/')
             .then((response) => {
-                setTeam(response.data);
+                setRegister(response.data);
             })
     }, [])
 
     useEffect(() => {
         setFilteredData(
-            team.filter((team) => team.name.toLowerCase().includes(search.toLowerCase())) ||
-            team.filter((team) => team.id.toLowerCase().includes(search.toLowerCase()))
+            register.filter((register) => register.name.toLowerCase().includes(search.toLowerCase())) ||
+            register.filter((register) => register.id.toLowerCase().includes(search.toLowerCase()))
         )
-    }, [search], team)
+    }, [search], register)
 
 
     return (
@@ -28,16 +28,16 @@ function SearchBar() {
             <div className='container' id="searchRegisterVaccineForm">
                 <h3 className="searchRegisterVaccineTitle">SEARCH EMPLOYEE DETAILS</h3>
                 <br /><br />
-                <h5>Enter Member Name to view Details </h5>
+                <h5>Enter Employee Name to view Details </h5>
                 <br />
-                <input className="searchBar" type="text" placeholder="Search Team Member" onChange={(e) => {
+                <input className="searchBar" type="text" placeholder="Search employee" onChange={(e) => {
                     setSearch(e.target.value);
                 }} />
                 <br /><br />
                 <table className="table">
                     <thead className="thead-light">
                         <tr>
-                            <th>Team Member Details</th>
+                            <th>Employee Details</th>
                         </tr>
                     </thead>
                     <tbody>
