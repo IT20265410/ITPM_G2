@@ -10,6 +10,7 @@ const Faq = (props) => (
     <td>{props.faq.questionId}</td>
     <td>{props.faq.question}</td>
     <td>{props.faq.answer}</td>
+    <td>{props.faq.addDate.substring(0, 10)}</td>
     <td>
       <Link to={"/updateFaq/" + props.faq._id}>Edit</Link> |
       <a
@@ -43,9 +44,13 @@ export default class ViewFaq extends Component {
     doc.setFontSize(15);
 
     const title = "Frequently Asked Questions";
-    const headers = [["Question", "Answer"]];
+    const headers = [["Quesrion ID", "Question", "Answer"]];
 
-    const faq = this.state.faqs.map((elt) => [elt.question, elt.answer]);
+    const faq = this.state.faqs.map((elt) => [
+      elt.questionId,
+      elt.question,
+      elt.answer,
+    ]);
 
     let content = {
       startY: 50,
@@ -90,16 +95,6 @@ export default class ViewFaq extends Component {
     });
   };
 
-  // deleteOffer(id) {
-  //   axios
-  //     .delete("http://localhost:5000/offers/" + id)
-  //     .then((res) => console.log(res.data));
-
-  //   this.setState({
-  //     offers: this.state.offers.filter((el) => el._id !== id),
-  //   });
-  // }
-
   faqList() {
     return this.state.faqs.map((currentfaq) => {
       return (
@@ -136,11 +131,7 @@ export default class ViewFaq extends Component {
             </div>
             <div className="col-6 buttons2">
               <div className="col-4 buttons" style={{ marginLeft: "450px" }}>
-                <Link
-                  to="/searchFaq"
-                  type="button"
-                  className="btn btn-success"
-                >
+                <Link to="/searchFaq" type="button" className="btn btn-success">
                   Search FAQ details
                 </Link>
                 <br />
@@ -155,6 +146,7 @@ export default class ViewFaq extends Component {
                 <th>Question ID</th>
                 <th>Question</th>
                 <th>Answer</th>
+                <th style={{ width: "120px" }}>Added Date</th>
                 <th>Action</th>
               </tr>
             </thead>
