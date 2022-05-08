@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import swal from "sweetalert";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -12,12 +14,14 @@ export default class CreateFaq extends Component {
     this.onChangeQuestionId = this.onChangeQuestionId.bind(this);
     this.onChangeQuestion = this.onChangeQuestion.bind(this);
     this.onChangeAnswer = this.onChangeAnswer.bind(this);
+    this.onChangeAddDate = this.onChangeAddDate.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
       questionId: "",
       question: "",
       answer: "",
+      addDate: new Date(),
     };
   }
 
@@ -39,6 +43,12 @@ export default class CreateFaq extends Component {
     });
   }
 
+  onChangeAddDate(date) {
+    this.setState({
+      addDate: date,
+    });
+  }
+
   onSubmit(e) {
     e.preventDefault();
 
@@ -46,6 +56,7 @@ export default class CreateFaq extends Component {
       questionId: this.state.questionId,
       question: this.state.question,
       answer: this.state.answer,
+      addDate: this.state.addDate,
     };
 
     //sumbit faq details to the database
@@ -109,6 +120,16 @@ export default class CreateFaq extends Component {
                 pattern="[A-Za-z0-9' '?%.@#]{8,}"
                 title="Minimum characters length must be 8"
               />
+            </div>
+            <div className="form-group">
+              <label className="textColour">Question Adding Date: </label>
+              <div>
+                <DatePicker
+                  selected={this.state.addDate}
+                  onChange={this.onChangeAddDate}
+                  minDate={new Date()}
+                />
+              </div>
             </div>
             <br />
             <div className="form-group">
