@@ -71,6 +71,7 @@ export default class Viewc extends Component {
 
     componentDidMount() {
         axios.get('http://localhost:4800/aboutUs/')
+
             .then(response => {
                 this.setState({ aboutUs: response.data })
             })
@@ -81,6 +82,7 @@ export default class Viewc extends Component {
 
     deleteAboutUs(id) {
         axios.delete('http://localhost:4800/aboutUs/' + id)
+
             .then(res => console.log(res.data));
 
         this.setState({

@@ -32,7 +32,7 @@ const contactsRouter = require('./routes/contacts');
 app.use('/addvehicle', addvehicleRouter);  
 app.use('/offers', offersRouter);
 app.use('/faqs', faqsRouter);
-app.use('/register', registerRouter);
+app.use('/register', registerRouter); 
 app.use('/aboutUs', aboutUsRouter);
 app.use('/team', teamRouter);
 app.use('/rentv', rentvRouter);  

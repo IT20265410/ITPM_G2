@@ -68,6 +68,7 @@ export default class Viewcm extends Component {
 
 
     componentDidMount() {
+
         axios.get('http://localhost:4800/team/')
             .then(response => {
                 this.setState({ team: response.data })
@@ -88,6 +89,7 @@ export default class Viewcm extends Component {
         }).then((willDelete) => {
             if (willDelete) {
                 axios.delete('http://localhost:4800/team/ ${id}').then((res) => {
+
                     swl("Vehicle Deleted Succesfully.", {
                         icon: "success",
                     });
