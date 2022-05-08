@@ -25,7 +25,7 @@ const registerRouter = require('./routes/register');
 const aboutUsRouter = require('./routes/aboutUs');
 const teamRouter = require('./routes/team');
 const rentvRouter = require('./routes/rentv');
-const customersRouter = require('./routes/customers');
+const madicinesRouter = require('./routes/madicines');
 const contactsRouter = require('./routes/contacts');
 
 
@@ -36,7 +36,7 @@ app.use('/register', registerRouter);
 app.use('/aboutUs', aboutUsRouter);
 app.use('/team', teamRouter);
 app.use('/rentv', rentvRouter);  
-app.use('/customers', customersRouter);
+app.use('/madicines', madicinesRouter);
 app.use('/contacts', contactsRouter);  
 
 app.listen(port, () => {

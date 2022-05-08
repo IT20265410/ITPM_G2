@@ -8,7 +8,7 @@ function SearchBar() {
     const [filteredData, setFilteredData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:4990/contacts/')
+        axios.get('http://localhost:4800/contacts/')
             .then((response) => {
                 setContacts(response.data);
             })

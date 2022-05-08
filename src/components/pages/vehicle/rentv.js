@@ -102,10 +102,10 @@ export default class Rentv extends Component{
             
 
     return(
-        <div className='addCovidPage'>
+        <div className='addvehiclePage'>
         <br />
         <div className='container' id="addRegisterForm">
-        <h3 className="addcovidTitle">RENT ON VEHICLES</h3>
+        <h3 className="addvehicleTitle">RENT ON VEHICLES</h3>
         <form onSubmit={this.onSubmit} >
         <div className="form-group">
                         <label className="textColour">Customer ID: </label>

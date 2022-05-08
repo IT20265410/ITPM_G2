@@ -1,5 +1,3 @@
-
-
 import React, { Component, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -7,28 +5,29 @@ import "./pharmacy.css";
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
 
-const Customers = props => (
+const Madicines = props => (
     <tr>
-    <td>{props.contacts.cname}</td>
-    <td>{props.contacts.cemail}</td>
-    <td>{props.contacts.caddress}</td>
-    <td>{props.contacts.nic.substring(0,12)}</td>
-    <td>{props.contacts.gender}</td>
-    <td>{props.contacts.mobileno.substring(0,15)}</td>
-    <td>
-        <Link to={"/editcustomer/" + props.customers._id}>edit</Link> | <a href="customer-list" onClick={() => { props.deleteCustomers(props.customers._id) }}>delete</a>
-    </td>
+        <td>{props.madicines.cname}</td>
+    <td>{props.madicines.cemail}</td>
+    <td>{props.madicines.caddress}</td>
+    <td>{props.madicines.nic.substring(0,12)}</td>
+    <td>{props.madicines.gender}</td>
+    <td>{props.madicines.mobileno.substring(0,15)}</td>
+
+        <td>
+            <Link to={"/editcustomer/" + props.madicines._id}>edit</Link> | <a href="customer-list" onClick={() => { props.deleteMadicines(props.madicines._id) }}>delete</a>
+        </td>
     </tr>
 )
 
 
-export default class ViewCustomers extends Component {
+export default class ViewMadicines extends Component {
     constructor(props) {
         super(props);
 
-        this.deleteCustomers = this.deleteCustomers.bind(this);
+        this.deleteMadicines = this.deleteMadicines.bind(this);
 
-        this.state = { customers: [] };
+        this.state = { madicines: [] };
     }
 
     exportPDF = () => {
@@ -52,7 +51,7 @@ export default class ViewCustomers extends Component {
           ],
         ];
     
-        const customers = this.state.customers.map((elt) => [
+        const madicines = this.state.madicines.map((elt) => [
           elt._id,
           elt.cname,
           elt.cemail,
@@ -65,7 +64,7 @@ export default class ViewCustomers extends Component {
         let content = {
           startY: 50,
           head: headers,
-          body: customers,
+          body: madicines,
         };
     
         doc.text(title, marginLeft, 40);
@@ -75,28 +74,28 @@ export default class ViewCustomers extends Component {
 
 
     componentDidMount() {
-        axios.get('http://localhost:4990/customers/')
+        axios.get('http://localhost:4800/madicines/')
             .then(response => {
-                this.setState({ customers: response.data })
+                this.setState({ madicines: response.data })
             })
             .catch((error) => {
                 console.log(error);
             })
     }
 
-    deleteCustomers(id) {
-        axios.delete('http://localhost:4990/customers/' + id)
+    deleteMadicines(id) {
+        axios.delete('http://localhost:4800/madicines/' + id)
             .then(res => console.log(res.data));
 
         this.setState({
-            customers: this.state.customers.filter(sml => sml._id !== id)
+            madicines: this.state.madicines.filter(sml => sml._id !== id)
         })
         alert("Delete Customer Details?")
     }
 
-    customersList() {
-        return this.state.customers.map(currentcustomers => {
-            return <Customers customers={currentcustomers} deleteCustomers={this.deleteCustomers} key={currentcustomers._id} />;
+    madicinesList() {
+        return this.state.madicines.map(currentmadicines => {
+            return <Madicines madicines={currentmadicines} deleteMadicines={this.deleteMadicines} key={currentmadicines._id} />;
         })
     }
 
@@ -126,7 +125,7 @@ export default class ViewCustomers extends Component {
                         </div></div>
 
                         <br/>
- 
+
 
                         <div className="col-3 buttons2">
             <Link onClick={() => this.exportPDF()} className="btn btn-warning">
@@ -154,7 +153,7 @@ export default class ViewCustomers extends Component {
                             </tr>
                         </thead>
                         <tbody>
-                            {this.customersList()}
+                            {this.madicinesList()}
                         </tbody>
                     </table>
              

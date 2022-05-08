@@ -105,7 +105,7 @@ export default class ViewFaq extends Component {
 
   render() {
     return (
-      <div className="addCovidPage">
+      <div className="addvehiclePage">
         <div className="container">
           <br />
           <center>

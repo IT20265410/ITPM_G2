@@ -120,7 +120,7 @@ export default class Viewrent extends Component {
 
     render() {
         return (
-            <div id='addCovidPage' className='viewTfee'>
+            <div id='addvehiclePage' className='viewTfee'>
                 <br />
                 <div className='container'>
                     <div id='covidbar' >
@@ -129,15 +129,15 @@ export default class Viewrent extends Component {
 
                         <div className='row'>
                         <div className='col-2 buttons'>
-                            <Link to="/" type="button" className="btn-secondary">
+                            <Link to="/" type="button" className="btn btn-secondary">
                                 Search Vehicle details
                             </Link>
                             <br />
                         </div>
 
               <div className='col-2 buttons'>
-                            <Link to="/rentv" type="button" className="btn-primary">
-                             ADD VEHICLE
+                            <Link to="/rentv" type="button" className="btn btn-primary">
+                             ADD RENT DETAILS
                             </Link>
                             <br />
                         </div></div>
@@ -146,7 +146,7 @@ export default class Viewrent extends Component {
 
 
                         <div className="col-4 buttons2">
-            <Link onClick={() => this.exportPDF()} className="btn-warning">
+            <Link onClick={() => this.exportPDF()} className="btn btn-warning">
               &nbsp;&nbsp;Genarate Report
             </Link>
             <br />

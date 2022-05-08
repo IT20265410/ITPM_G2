@@ -12,8 +12,7 @@ const Contacts = props => (
     <td>{props.contacts.rvote}</td>
     <td>{props.contacts.rvotn.substring(0,15)}</td>
     <td>{props.contacts.bde}</td>
-    <td>{props.contacts.bdn.substring(0,15)}</td> 
-     
+    <td>{props.contacts.bdn.substring(0,15)}</td>    
     </tr>
 )
  
@@ -24,7 +23,7 @@ export default class ViewContacts extends Component {
         this.state = { contacts: [] };
     } 
     componentDidMount() {
-        axios.get('http://localhost:4990/contacts/')
+        axios.get('http://localhost:4800/contacts/')
             .then(response => {
                 this.setState({ contacts: response.data })
             })
@@ -33,7 +32,7 @@ export default class ViewContacts extends Component {
             })
     } 
     deleteContacts(id) {
-        axios.delete('http://localhost:4990/contacts/' + id)
+        axios.delete('http://localhost:4800/contacts/' + id)
             .then(res => console.log(res.data));
 
         this.setState({

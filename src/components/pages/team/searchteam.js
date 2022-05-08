@@ -23,9 +23,9 @@ function SearchBar() {
 
 
     return (
-        <div className="addCovidPage">
+        <div className="addvehiclePage">
             <br />
-            <div className='container' id="searchRegisterVaccineForm">
+            <div className='container' id="searchVehicleForm">
                 <h3 className="searchRegisterVaccineTitle">SEARCH EMPLOYEE DETAILS</h3>
                 <br /><br />
                 <h5>Enter Member Name to view Details </h5>

@@ -88,7 +88,7 @@ export default class AddContact extends Component {
 
     console.log(contact);
 
-    axios.post('http://localhost:4990/madicines/add', contact)
+    axios.post('http://localhost:4800/madicines/add', contact)
       .then(res => console.log(res.data));
 
       swl("Contact Details Added Succesfully.", {

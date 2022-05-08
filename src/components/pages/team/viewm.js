@@ -120,7 +120,7 @@ export default class Viewm extends Component {
     
     render() {
         return (
-            <div className='addCovidPage' id="viewTable">
+            <div className='addvehiclePage' id="viewTable">
                 <br />
                 <center><h3 className="addcovid1Title">Team Member Details</h3></center>
                 <div className='container' id="viewMedicineForm">

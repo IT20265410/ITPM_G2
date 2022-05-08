@@ -98,7 +98,7 @@ export default class Viewa extends Component {
 
     render() {
         return (
-            <div className='addCovidPage' id="viewTable">
+            <div className='addvehiclePage' id="viewTable">
                 <br />
                 <center><h3 className="addcovid1Title">About Us</h3></center>
                 <div className='container' id="viewMedicineForm">

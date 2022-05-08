@@ -72,7 +72,7 @@ export default class ViewContacts extends Component {
         doc.save("contacts.pdf");
       }; 
     componentDidMount() {
-        axios.get('http://localhost:4990/contacts/')
+        axios.get('http://localhost:4800/contacts/')
             .then(response => {
                 this.setState({ contacts: response.data })
             })
@@ -81,7 +81,7 @@ export default class ViewContacts extends Component {
             })
     } 
     deleteContacts(id) {
-        axios.delete('http://localhost:4990/contacts/' + id)
+        axios.delete('http://localhost:4800/contacts/' + id)
             .then(res => console.log(res.data));
 
         this.setState({

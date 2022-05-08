@@ -29,9 +29,9 @@ function SearchBarFaq() {
   );
 
   return (
-    <div className="addCovidPage">
+    <div className="addvehiclePage">
       <br />
-      <div className="container" id="searchRegisterVaccineForm">
+      <div className="container" id="searchVehicleForm">
         <h3 className="searchRegisterVaccineTitle">SEARCH FAQs' DETAILS</h3>
         <br />
         <br />

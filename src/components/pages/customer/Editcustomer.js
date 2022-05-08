@@ -15,7 +15,7 @@ export default class EditPatient extends Component {
     this.onChangeMobileno = this.onChangeMobileno.bind(this); 
     this.onSubmit = this.onSubmit.bind(this);
 
- 
+
 
     this.state = {
       cname: '',
@@ -29,7 +29,7 @@ export default class EditPatient extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4990/customers/' + this.props.match.params.id)
+    axios.get('http://localhost:4800/madicines/' + this.props.match.params.id)
       .then(response => {
         this.setState({
           cname:  response.data.cname,
@@ -92,7 +92,7 @@ export default class EditPatient extends Component {
 
     console.log(exercise);
 
-    axios.post('http://localhost:4990/customers/update/' + this.props.match.params.id, exercise)
+    axios.post('http://localhost:4800/madicines/update/' + this.props.match.params.id, exercise)
       .then(res => console.log(res.data));
 
       alert("Customer Details Updated !")

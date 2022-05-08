@@ -39,6 +39,7 @@ import Searchvehicle from "./components/pages/vehicle/searchvehicle";
 import Rentv from "./components/pages/vehicle/rentv";
 import Viewrent from "./components/pages/vehicle/viewrent";
 import Editrent from './components/pages/vehicle/editrent';
+import Cvehicle from "./components/pages/vehicle/cvehicle"
 
 
 
@@ -57,9 +58,9 @@ import Viewc from "./components/pages/aboutUs_cs/viewc";
 import Viewcm from "./components/pages/aboutUs_cs/viewcm";
 
 
-import AddCustomer from "./components/pages/customer/create";
-import ViewCustomer from "./components/pages/customer/customer-list";
-import EditCustomer from "./components/pages/customer/Editcustomer";
+import AddMadicine from "./components/pages/customer/create";
+import ViewMadicines from "./components/pages/customer/customer-list";
+import EditMadicine from "./components/pages/customer/editcustomer";
 import SearchCustomer from './components/pages/customer/searchCustomer';
 import AddContacts from './components/pages/customer/create-contacts';  
 import ViewContact from './components/pages/customer/contact-list';
@@ -112,6 +113,7 @@ function App() {
        <Route exact path="/rentv" component={Rentv} />
        <Route exact path="/viewrent" component={Viewrent} />
        <Route path="/editrent/:id" component={Editrent} />
+       <Route exact path="/cvehicle" component={Cvehicle} />
        
 
 
@@ -132,14 +134,15 @@ function App() {
 
 
 
-              <Route path="/create" component={AddCustomer} />
-              <Route path="/customer-list" component={ViewCustomer} /> 
-              <Route path="/Editcustomer/:id" component={EditCustomer} />
+       <Route path="/create" component={AddMadicine} />
+              <Route path="/customer-list" component={ViewMadicines} />
+              
+              <Route path="/editcustomer/:id" component={EditMadicine} />
               <Route path='/searchCustomer' component={SearchCustomer} />
               
               <Route path="/create-contacts" component={AddContacts} />
               <Route path='/contact-list' component={ViewContact} /> 
-              <Route path='/Editcontact' component={EditContact} /> 
+              <Route path="/Editcontact" component={EditContact} /> 
               <Route path='/searchContact' component={SearchContact} /> 
 
               <Route path='/customer-contact-list' component={ViewCustomerContact} />  

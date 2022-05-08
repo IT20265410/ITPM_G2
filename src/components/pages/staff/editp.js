@@ -258,13 +258,13 @@ export default class Editp extends Component {
 
         return (
 
-            <div className='addCovidPage'>
+            <div className='addvehiclePage'>
 
                 <br />
 
                 <div className='container' id="addRegisterForm">
 
-                    <h3 className="addcovidTitle">Update Staff Member Details</h3>
+                    <h3 className="addvehicleTitle">Update Staff Member Details</h3>
 
                     <form onSubmit={this.onSubmit}>
 

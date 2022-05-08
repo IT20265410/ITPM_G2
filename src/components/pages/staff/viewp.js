@@ -100,7 +100,7 @@ export default class Viewp extends Component {
 
     render() {
         return (
-            <div className='addCovidPage' id="viewTable">
+            <div className='addvehiclePage' id="viewTable">
                 <br />
                 <center><h3 className="addcovid1Title">Staff Member Details</h3></center>
                 <div className='container' id="viewMedicineForm">

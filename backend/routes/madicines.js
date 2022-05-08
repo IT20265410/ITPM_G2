@@ -1,10 +1,10 @@
 const router = require('express').Router();
-let Addcustomers = require('../models/Customer.models');
+let Addmadicines = require('../models/Madicines');
 
 //retrieve all
 router.route('/').get((_req, res) => {
-    Addcustomers.find()
-        .then(customers => res.json(customers))
+    Addmadicines.find()
+        .then(madicines => res.json(madicines))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
@@ -17,7 +17,7 @@ router.route('/add').post((req, res) => {
     const gender = req.body.gender;
     const mobileno = req.body.mobileno;
 
-    const newAddcustomers = new Addcustomers({ 
+    const newAddmadicines = new Addmadicines({ 
         cname,
         cemail,
         caddress,
@@ -25,37 +25,37 @@ router.route('/add').post((req, res) => {
         gender,
         mobileno
     });
-    newAddcustomers.save()
-        .then(() => res.json('New Customers Added Successfully...'))
+    newAddmadicines.save()
+        .then(() => res.json('New Madicines Added Successfully...'))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
 //retrieve function 
 router.route('/:id').get((req, res) => {
-    Addcustomers.findById(req.params.id)
-        .then(customers => res.json(customers))
+    Addmadicines.findById(req.params.id)
+        .then(madicines => res.json(madicines))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
 //delete function
 router.route('/:id').delete((req, res) => {
-    Addcustomers.findByIdAndDelete(req.params.id)
-        .then(() => res.json('Customers Details Deleted.'))
+    Addmadicines.findByIdAndDelete(req.params.id)
+        .then(() => res.json('Madicines Details Deleted.'))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
 //update function
 router.route('/update/:id').post((req, res) => {
-    Addcustomers.findById(req.params.id)
-        .then(customers => {
-            customers.cname = req.body.cname;
-            customers.cemail = req.body.cemail;
-            customers.caddress = req.body.caddress;
-            customers.nic = req.body.nic;
-            customers.gender = req.body.gender;
-            customers.mobileno = req.body.mobileno;
-            customers.save()
-                .then(() => res.json('Customers Details Updated!'))
+    Addmadicines.findById(req.params.id)
+        .then(madicines => {
+            madicines.cname = req.body.cname;
+            madicines.cemail = req.body.cemail;
+            madicines.caddress = req.body.caddress;
+            madicines.nic = req.body.nic;
+            madicines.gender = req.body.gender;
+            madicines.mobileno = req.body.mobileno;
+            madicines.save()
+                .then(() => res.json('Madicines Details Updated!'))
                 .catch(err => res.status(400).json('Error: ' + err));
         })
         .catch(err => res.status(400).json('Error: ' + err));

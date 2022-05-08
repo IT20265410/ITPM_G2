@@ -116,7 +116,7 @@ export default class Viewcm extends Component {
     
     render() {
         return (
-            <div className='addCovidPage' id="viewTable">
+            <div className='addvehiclePage' id="viewTable">
                 <br />
                 <center><h1 className="addcovid1Title">More About Rathavahana.lk</h1></center>
                 <center><h3 className="addcovid1Title">Why Choose Us</h3></center>

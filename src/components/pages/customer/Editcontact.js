@@ -31,7 +31,7 @@ export default class EditPatient extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4990/contacts/' + this.props.match.params.id)
+    axios.get('http://localhost:4800/contacts/' + this.props.match.params.id)
       .then(response => {
         this.setState({
           nate:  response.data.nate,
@@ -106,7 +106,7 @@ export default class EditPatient extends Component {
 
     console.log(contact);
 
-    axios.post('http://localhost:4990/contacts/update/' + this.props.match.params.id, contact)
+    axios.post('http://localhost:4800/contacts/update/' + this.props.match.params.id, contact)
       .then(res => console.log(res.data));
 
       alert("Contact Details Updated !")

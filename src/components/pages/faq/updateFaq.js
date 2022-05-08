@@ -103,10 +103,10 @@ export default class UpdateFaq extends Component {
 
   render() {
     return (
-      <div className="addCovidPage">
+      <div className="addvehiclePage">
         <br />
         <div className="container" id="addRegisterForm">
-          <h3 className="addcovidTitle">UPDATE FAQ DETAILS</h3>
+          <h3 className="addvehicleTitle">UPDATE FAQ DETAILS</h3>
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <label className="textColour">Question ID: </label>

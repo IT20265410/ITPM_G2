@@ -83,10 +83,10 @@ export default class Editvehicle extends Component {
 
     render() {
         return (
-            <div className='addCovidPage'>
+            <div className='addvehiclePage'>
                 <br />
                 <div className='container' id="addRegisterForm">
-                   <h3 className="addcovidTitle">UPDATE VEHICLE</h3>
+                   <h3 className="addvehicleTitle">UPDATE VEHICLE</h3>
                     <form onSubmit={this.onSubmit}>
                         
                         <div className="form-group">

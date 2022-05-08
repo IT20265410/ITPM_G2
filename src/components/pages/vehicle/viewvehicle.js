@@ -114,7 +114,7 @@ export default class Viewvehicle extends Component {
 
     render() {
         return (
-            <div className='addCovidPage' id="viewTable">
+            <div className='addvehiclePage' id="viewTable">
                 <br />
                 <div className='container'>
                     <div id='covidbar2' >

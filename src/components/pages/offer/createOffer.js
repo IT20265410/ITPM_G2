@@ -103,10 +103,10 @@ export default class CreateOffer extends Component {
 
   render() {
     return (
-      <div className="addCovidPage">
+      <div className="addvehiclePage">
         <br />
         <div className="container" id="addRegisterForm">
-          <h3 className="addcovidTitle">ADD NEW OFFER</h3>
+          <h3 className="addvehicleTitle">ADD NEW OFFER</h3>
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <label className="textColour">Offer ID: </label>

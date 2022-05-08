@@ -43,4 +43,4 @@ const addcustomerSchema = new Schema({
 
 const Addcustomer = mongoose.model("Addcustomer", addcustomerSchema);
 
-module.exports = Addcustomer;
+module.exports = Addcustomer;  

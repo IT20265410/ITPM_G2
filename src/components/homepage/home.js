@@ -1,73 +1,61 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./home.css";
-// import RegVac from "../../images/RegVac.png";
-// import PatientList from "../../images/PatientList.png";
-// import CalculateFee from "../../images/CalculateFee.png";
-// import Generate from "../../images/Generate.png";
-import {
-  CovidManageContainer,
-  CovidManageH1,
-  CovidManageWrapper,
-  CovidManageCard,
-  CovidManageIcon,
-  CovidManageH2,
-} from "./home2";
-import ViewOffer from "../pages/offer/viewOffer";
 
-function CovidManage() {
+import {
+  VehicleManageContainer,
+  VehicleManageWrapper,
+  VehicleManageCard,
+  VehicleManageH2,
+} from "./home2";
+
+function VehicleManage() {
   return (
-    <div className="maincovidPage">
+    <div className="mainvehiclePage">
       <br />
-      <div className="covidManage">
-        <CovidManageContainer id="covidManage">
-          <h3 className="covidB">RATHAVAHANA.LK</h3>
+      <div className="vehicleManage">
+        <VehicleManageContainer id="vehicleManage">
+          <h3 className="vehicleB">RATHAVAHANA.LK</h3>
           <br />
-          {/* <CovidManageH1>
-            <h4 className="covidtext">Select task to continue</h4>
-          </CovidManageH1> */}
-          <CovidManageWrapper>
-            <CovidManageCard>
-              <div className="covidManage1">
-                <CovidManageH2>CUSTOMER DETAILS MANAGEMENT</CovidManageH2>
-                {/* <CovidManageIcon src={ViewOffer} /> */}
+          <VehicleManageWrapper>
+            <VehicleManageCard>
+              <div className="vehicleManage1">
+                <VehicleManageH2>CUSTOMER DETAILS MANAGEMENT</VehicleManageH2>
                 <h4>
                   <NavLink to="/customer-list">Continue</NavLink>
                 </h4>
               </div>
-            </CovidManageCard>
-            <CovidManageCard>
-              <div className="covidManage1">
-                <CovidManageH2>STAFF DETAILS MANAGEMENT</CovidManageH2>
-                {/* <CovidManageIcon src={PatientList} /> */}
+            </VehicleManageCard>
+            <VehicleManageCard>
+              <div className="vehicleManage1">
+                <VehicleManageH2>STAFF DETAILS MANAGEMENT</VehicleManageH2>
                 <h4>
                   <NavLink to="/viewp">Continue</NavLink>
                 </h4>
               </div>
-            </CovidManageCard>
-            <CovidManageCard>
-              <div className="covidManage1">
-                <CovidManageH2>VEHICLE DETAILS MANAGEMENT</CovidManageH2>
-                {/* <CovidManageIcon src={CalculateFee} /> */}
+            </VehicleManageCard>
+            <VehicleManageCard>
+              <div className="vehicleManage1">
+                <VehicleManageH2>VEHICLE DETAILS MANAGEMENT</VehicleManageH2>
+
                 <h4>
                   <NavLink to="/viewvehicle">Continue</NavLink>
                 </h4>
               </div>
-            </CovidManageCard>
-            <CovidManageCard>
-              <div className="covidManage1">
-                <CovidManageH2>OFFER DETAILS MANAGEMENT</CovidManageH2>
-                {/* <CovidManageIcon src={Generate} /> */}
+            </VehicleManageCard>
+            <VehicleManageCard>
+              <div className="vehicleManage1">
+                <VehicleManageH2>OFFER DETAILS MANAGEMENT</VehicleManageH2>
                 <h4>
                   <NavLink to="/viewOffer">Continue</NavLink>
                 </h4>
               </div>
-            </CovidManageCard>
-          </CovidManageWrapper>
-        </CovidManageContainer>
+            </VehicleManageCard>
+          </VehicleManageWrapper>
+        </VehicleManageContainer>
       </div>
     </div>
   );
 }
 
-export default CovidManage;
+export default VehicleManage;

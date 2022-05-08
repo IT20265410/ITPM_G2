@@ -3,7 +3,7 @@
   padding: 16px;
   background-color: rgba(226, 242, 255, 0.5);
 }
-.addCovidPage{
+.addvehiclePage{
 	background: url("https://wallpaperaccess.com/full/11207.jpg") no-repeat center center fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -11,7 +11,7 @@
     min-height: 900px;
 }
 
-#addCovidPage{
+#addvehiclePage{
 	background: url("https://wallpaperaccess.com/full/11207.jpg") no-repeat center center fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -19,14 +19,14 @@
     min-height: 900px;
 }
 
-.addcovidTitle{
+.addvehicleTitle{
 	color: rgb(4, 12, 231);
 	margin: auto;
 	width: 60%;
 	margin-right: 10px 0px;
     margin-left: 250px;
 }
-#searchRegisterVaccineForm{
+#searchVehicleForm{
     max-width: 700px;
     height:650px;
     padding: 16px;
@@ -112,6 +112,27 @@ input{
 }
 
 
+#offerTable {
+    border: 3px solid rgb(23, 6, 87); 
+    margin-left: -10px;
+    width: 100%; 
+    background-image: url("../pages/offer_cs/offers.jpg");
+    background-size: cover;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+#offerTable th{
+    text-align: center;
+        padding-top: 5px;
+        padding-right: 5px;
+        padding-left: 5px;
+        padding-bottom: 5px;
+        background-color: #0f3e74;
+        color: white;
+
+}
+
 #offerTable td {
     text-align: center;
     padding: 10px;
@@ -142,6 +163,7 @@ input{
     background-color: #ddd;
 }
 
+
 .CustomerOffer {
 background-image: url("../pages/offer_cs/back.png");
 min-height: 600px;
@@ -161,4 +183,51 @@ min-height: 600px;
 	background-repeat: no-repeat;
 	background-size: cover;
     min-height: 1000px;
+}
+
+#addrent1Title{
+  color: rgb(2, 2, 250);
+  text-shadow: 2px 2px 5px red;
+  background-color: #dcdfcb;
+  background-size: 5px;
+  background-size: auto;
+  width: 400px;
+  height: 100px;
+  animation: mymove 5s infinite;
+}
+
+@keyframes mymove {
+    50% {font-weight: bold;}
+  }
+
+  .addRentPage{
+	background: url("https://wallpaperaccess.com/full/5416653.jpg") no-repeat center center fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    min-height: 900px;
+}
+
+#carTable {
+    border: 3px solid rgb(23, 6, 87); 
+    margin-left: -10px;
+    width: 100%;
+    font-size: larger;
+    font-weight: bolder;   
+}
+
+#carTable th {
+    padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: #0f3e74;
+        color: white;
+}
+
+#carTable td {
+    padding: 8px;
+}
+
+#carTable tr:hover {
+    background-color: rgb(240, 244, 2);
 }

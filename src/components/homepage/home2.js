@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CovidManageContainer = styled.div`
+export const VehicleManageContainer = styled.div`
   height: 500px;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@ export const CovidManageContainer = styled.div`
     height: 1300px;
   }
 `;
-export const CovidManageWrapper = styled.div`
+export const VehicleManageWrapper = styled.div`
   max-width: 1000px;
   margin: 0 auto;
   display: grid;
@@ -31,7 +31,7 @@ export const CovidManageWrapper = styled.div`
   }
 `;
 
-export const CovidManageCard = styled.div`
+export const VehicleManageCard = styled.div`
   background: #382d69;
   display: flex;
   flex-direction: column;
@@ -49,13 +49,13 @@ export const CovidManageCard = styled.div`
   }
 `;
 
-export const CovidManageIcon = styled.img`
+export const VehicleManageIcon = styled.img`
   height: 160px;
   width: 160px;
   margin-bottom: 10px;
 `;
 
-export const CovidManageH1 = styled.h1`
+export const VehicleManageH1 = styled.h1`
   font-size: 2.5rem;
   color: red;
   margin-bottom: 32px;
@@ -64,7 +64,7 @@ export const CovidManageH1 = styled.h1`
   }
 `;
 
-export const CovidManageH2 = styled.h2`
+export const VehicleManageH2 = styled.h2`
   font-size: 1rem;
   margin-bottom: 10px;
 `;

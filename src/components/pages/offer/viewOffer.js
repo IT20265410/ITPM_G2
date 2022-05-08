@@ -126,7 +126,7 @@ export default class ViewOffer extends Component {
 
   render() {
     return (
-      <div className="addCovidPage">
+      <div className="addvehiclePage">
         <div className="container">
           <br />
           <center>

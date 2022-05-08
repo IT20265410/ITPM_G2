@@ -76,10 +76,10 @@ export default class CreateFaq extends Component {
 
   render() {
     return (
-      <div className="addCovidPage">
+      <div className="addvehiclePage">
         <br />
         <div className="container" id="addRegisterForm">
-          <h3 className="addcovidTitle">ADD NEW FAQ</h3>
+          <h3 className="addvehicleTitle">ADD NEW FAQ</h3>
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <label className="textColour">Question ID: </label>

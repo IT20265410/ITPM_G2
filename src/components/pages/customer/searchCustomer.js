@@ -8,7 +8,7 @@ function SearchBar() {
     const [filteredData, setFilteredData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:4990/customers/')
+        axios.get('http://localhost:4800/customers/')
             .then((response) => {
                 setCustomers(response.data);
             })
@@ -40,7 +40,7 @@ function SearchBar() {
                     <tbody>
                         {filteredData.map((val) => {
                             return <div key={val.id}>
-                                <td>{val.cname}</td>
+                                <td>{val.cnames}</td>
                                 <td>{val.cemail}</td>
                                 <td>{val.caddress}</td>
                                 <td>{val.nic}</td>
