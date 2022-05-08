@@ -13,11 +13,13 @@ router.route("/add").post((req, res) => {
   const questionId = req.body.questionId;
   const question = req.body.question;
   const answer = req.body.answer;
+  const addDate = Date.parse(req.body.addDate);
 
   const newFaq = new Faq({
     questionId,
     question,
     answer,
+    addDate,
   });
 
   newFaq
@@ -46,6 +48,7 @@ router.route("/update/:id").put((req, res) => {
     .then((faq) => {
       faq.question = req.body.question;
       faq.answer = req.body.answer;
+      faq.addDate = Date.parse(req.body.addDate);
 
       faq
         .save()
