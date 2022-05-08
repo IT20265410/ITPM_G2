@@ -111,7 +111,7 @@ export default class RegisterVaccine extends Component {
 
         console.log(registerVaccine);
 
-        axios.post('http://localhost:4003/register/add', registerVaccine)
+        axios.post('http://localhost:4800/register/add', registerVaccine)
             .then(res => console.log(res.data));
 
         alert("Employee Added Succesfully!");

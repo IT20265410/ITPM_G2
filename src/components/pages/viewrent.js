@@ -76,7 +76,7 @@ export default class Viewrent extends Component {
       };
 
     componentDidMount() {
-        axios.get('http://localhost:4009/rentv/')
+        axios.get('http://localhost:4800/rentv/')
             .then(response => {
                 this.setState({ rentv: response.data })
             })
@@ -96,7 +96,7 @@ export default class Viewrent extends Component {
             dangerMode: true,
         }).then((willDelete) => {
             if (willDelete) {
-                axios.delete(`http://localhost:4009/rentv/${id}`).then((res) => {
+                axios.delete(`http://localhost:4800/rentv/${id}`).then((res) => {
                     swl("Rent Details Deleted Succesfully.", {
                         icon: "success",
                     });

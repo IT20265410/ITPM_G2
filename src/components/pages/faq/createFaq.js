@@ -63,7 +63,7 @@ export default class CreateFaq extends Component {
     console.log(faq);
 
     axios
-      .post("http://localhost:5000/faqs/add", faq)
+      .post("http://localhost:4800/faqs/add", faq)
       .then((res) => console.log(res.data));
 
     swal("FAQ Added Succesfully");

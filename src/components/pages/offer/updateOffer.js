@@ -31,7 +31,7 @@ export default class UpdateOffer extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/offers/" + this.props.match.params.id)
+      .get("http://localhost:4800/offers/" + this.props.match.params.id)
       .then((response) => {
         this.setState({
           offerId: response.data.offerId,
@@ -48,7 +48,7 @@ export default class UpdateOffer extends Component {
       });
 
     // axios
-    //   .get("http://localhost:5000/offers/")
+    //   .get("http://localhost:4800/offers/")
     //   .then((response) => {
     //     if (response.data.length > 0) {
     //       this.setState({
@@ -118,7 +118,7 @@ export default class UpdateOffer extends Component {
 
     axios
       .put(
-        "http://localhost:5000/offers/update/" + this.props.match.params.id,
+        "http://localhost:4800/offers/update/" + this.props.match.params.id,
         offer
       )
       .then((res) => console.log(res.data));

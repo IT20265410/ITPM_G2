@@ -9,25 +9,25 @@ export default class Editvehicle extends Component {
 
 
         this.onChangeName = this.onChangeName.bind(this);
-        this.onChangeVehicleImage = this.onChangeVehicleImage.bind(this);
+       
         this.onChangePrice = this.onChangePrice.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             name: '',
-            vehicleImage: '',
+            
             price: '',
             description: '',
         }
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4001/addvehicle/' + this.props.match.params.id)
+        axios.get('http://localhost:4800/addvehicle/' + this.props.match.params.id)
             .then(response => {
                 this.setState({
                     name: response.data.name,
-                    vehicleImage: response.data.vehicleImage,
+                   
                     price: response.data.price,
                     description: response.data.description
                 })
@@ -44,11 +44,7 @@ export default class Editvehicle extends Component {
         });
     }
 
-    onChangeVehicleImage(e) {
-        this.setState({
-            vehicleImage: e.target.value
-        });
-    }
+  
 
     onChangePrice(e) {
         this.setState({
@@ -68,14 +64,14 @@ export default class Editvehicle extends Component {
 
         const addvehicle = {
             name: this.state.name,
-            vehicleImage: this.state.vehicleImage,
+            
             price: this.state.price,
             description: this.state.description
         }
 
         console.log(addvehicle);
 
-        axios.post('http://localhost:4001/addvehicle/update/' + this.props.match.params.id, addvehicle)
+        axios.post('http://localhost:4800/addvehicle/update/' + this.props.match.params.id, addvehicle)
             .then(res => console.log(res.data));
 
             swl("Vehicle Added Succesfully.", {
@@ -103,16 +99,7 @@ export default class Editvehicle extends Component {
                                 
                             />
                         </div>
-                        <div className="form-group">
-                            <label className="textColour">Image: </label>
-                            <input type="text"
-                                required
-                                className="form-control"
-                                value={this.state.vehicleImage}
-                                onChange={this.onChangeVehicleImage}
-                               
-                            />
-                        </div>
+                        
                         <div className="form-group">
                             <label className="textColour">Rent Price: </label>
                             <input

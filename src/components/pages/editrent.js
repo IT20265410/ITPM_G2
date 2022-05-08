@@ -38,7 +38,7 @@ export default class Editrent extends Component {
 
     componentDidMount() {
 
-        axios.get('http://localhost:4009/rentv/' + this.props.match.params.id)
+        axios.get('http://localhost:4800/rentv/' + this.props.match.params.id)
 
             .then(response => {
 
@@ -119,7 +119,7 @@ export default class Editrent extends Component {
 
         console.log(rentv);
 
-        axios.post('http://localhost:4009/rentv/update/' + this.props.match.params.id, rentv)
+        axios.post('http://localhost:4800/rentv/update/' + this.props.match.params.id, rentv)
             .then(res => console.log(res.data));
 
             swl("Rent Details Updated Succesfully.", {

@@ -69,7 +69,7 @@ export default class Addvehicle extends Component {
 
         console.log(addvehicle);
 
-        axios.post('http://localhost:4001/addvehicle/add', addvehicle)
+        axios.post('http://localhost:4800/addvehicle/add', addvehicle)
             .then(res => console.log(res.data));
 
             swl("Vehicle Added Succesfully.", {

@@ -90,7 +90,7 @@ export default class CreateOffer extends Component {
     console.log(offer);
 
     axios
-      .post("http://localhost:5000/offers/add", offer)
+      .post("http://localhost:4800/offers/add", offer)
       .then((res) => console.log(res.data));
 
     swal("Offer Added Succesfully");

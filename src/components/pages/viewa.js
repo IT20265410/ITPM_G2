@@ -71,7 +71,7 @@ export default class Viewa extends Component {
 
 
     componentDidMount() {
-        axios.get('http://localhost:4003/aboutUs/')
+        axios.get('http://localhost:4800/aboutUs/')
             .then(response => {
                 this.setState({ aboutUs: response.data })
             })
@@ -81,7 +81,7 @@ export default class Viewa extends Component {
     }
 
     deleteAboutUs(id) {
-        axios.delete('http://localhost:4003/aboutUs/' + id)
+        axios.delete('http://localhost:4800/aboutUs/' + id)
             .then(res => console.log(res.data));
 
         this.setState({

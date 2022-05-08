@@ -112,18 +112,53 @@ input{
 }
 
 
-#offerTable {
+#offerTable td {
+    text-align: center;
+    padding: 10px;
+    text-align: left;
+}
+
+#faqTable {
     border: 3px solid rgb(23, 6, 87); 
     margin-left: -10px;
     width: 100%;
-    background-image: url("../pages/customerSide/offers.jpg");
-    height: 350px;
-    background-size: cover;
     font-size: larger;
-    font-weight: bolder;
-    text-align: center;
+    font-weight: bolder;   
+}
+
+#faqTable th {
+    padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: #0f3e74;
+        color: white;
+}
+
+#faqTable td {
+    padding: 8px;
+}
+
+#faqTable tr:hover {
+    background-color: #ddd;
 }
 
 .CustomerOffer {
 background-image: url("../pages/customerSide/back.png");
+min-height: 600px;
+}
+
+.addAboutPage{
+	background: url("https://media.istockphoto.com/photos/modern-computerlaptop-with-blank-screen-on-counter-barand-window-view-picture-id1157789866?b=1&k=20&m=1157789866&s=170667a&w=0&h=XDdkkxtHlghnmrdl8NGE_GlRcPlOFLJkAlZa8N4E5Jg=") no-repeat center center fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    min-height: 1000px;
+}
+
+.addAPage{
+	background: url("https://media.istockphoto.com/photos/hand-of-male-putting-wood-cube-block-with-word-value-on-wooden-table-picture-id1291599098?b=1&k=20&m=1291599098&s=170667a&w=0&h=dRpFRh43Zlu1GHY089Sey9IOSKNNBcrAnyHmFgvDy0Y=") no-repeat center center fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    min-height: 1000px;
 }

@@ -68,7 +68,7 @@ export default class AboutUs extends Component {
 
         console.log(aboutUs);
 
-        axios.post('http://localhost:4003/aboutUs/add', aboutUs)
+        axios.post('http://localhost:4800/aboutUs/add', aboutUs)
             .then(res => console.log(res.data));
 
             swl("aboutus details Added Succesfully.", {

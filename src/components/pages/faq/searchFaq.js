@@ -8,7 +8,7 @@ function SearchBarFaq() {
   const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/faqs/").then((response) => {
+    axios.get("http://localhost:4800/faqs/").then((response) => {
       setFaq(response.data);
     });
   }, []);

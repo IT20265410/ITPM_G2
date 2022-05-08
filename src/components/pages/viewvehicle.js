@@ -11,7 +11,7 @@ const Addvehicle = props => (
     <tr>
         <td>{props.addvehicle._id}</td>
         <td>{props.addvehicle.name}</td>
-        <td>{props.addvehicle.vehicleImage}</td>
+        
         <td>{props.addvehicle.price}</td>
         <td>{props.addvehicle.description}</td>
 
@@ -45,7 +45,7 @@ export default class Viewvehicle extends Component {
           [
             "Vehicle ID",
             "Name",
-            "Vehicle Image",
+            
             "Price",
             "Description",
           ],
@@ -54,7 +54,7 @@ export default class Viewvehicle extends Component {
         const addvehicle = this.state.addvehicle.map((elt) => [
           elt._id,
           elt.name,
-          elt.vehicleImage,
+       
           elt.price,
           elt.description,
           
@@ -72,7 +72,7 @@ export default class Viewvehicle extends Component {
       };
 
     componentDidMount() {
-        axios.get('http://localhost:4001/addvehicle/')
+        axios.get('http://localhost:4800/addvehicle/')
             .then(response => {
                 this.setState({ addvehicle: response.data })
             })
@@ -92,7 +92,7 @@ export default class Viewvehicle extends Component {
             dangerMode: true,
         }).then((willDelete) => {
             if (willDelete) {
-                axios.delete(`http://localhost:4001/addvehicle/${id}`).then((res) => {
+                axios.delete(`http://localhost:4800/addvehicle/${id}`).then((res) => {
                     swl("Vehicle Deleted Succesfully.", {
                         icon: "success",
                     });
@@ -154,7 +154,7 @@ export default class Viewvehicle extends Component {
                                 <tr id="tablist">
                                     <th className="viewlist">Vehicle ID</th>
                                     <th className="viewlist">Name</th>
-                                    <th className="viewlist">Image</th>
+                                    
                                     <th className="viewlist">Rent Price</th>
                                     <th className="viewlist">Description</th>
                                     <th className="viewlist"></th>

@@ -8,7 +8,7 @@ function SearchBar() {
     const [filteredData, setFilteredData] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:5000/offers/").then((response) => {
+        axios.get("http://localhost:4800/offers/").then((response) => {
           setOffer(response.data);
         });
     }, [])

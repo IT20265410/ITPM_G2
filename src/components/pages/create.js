@@ -74,7 +74,7 @@ export default class AddMadicine extends Component {
 
     console.log(exercise);
 
-    axios.post('http://localhost:4990/madicines/add', exercise)
+    axios.post('http://localhost:4800/madicines/add', exercise)
       .then(res => console.log(res.data));
 
       swl("Customer Added Succesfully.", {

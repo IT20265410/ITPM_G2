@@ -65,7 +65,7 @@ export default class ViewFaq extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/faqs/")
+      .get("http://localhost:4800/faqs/")
       .then((response) => {
         this.setState({ faqs: response.data });
       })
@@ -83,7 +83,7 @@ export default class ViewFaq extends Component {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        axios.delete(`http://localhost:5000/faqs/${id}`).then((res) => {
+        axios.delete(`http://localhost:4800/faqs/${id}`).then((res) => {
           swl("FAQ Details Deleted Succesfully.", {
             icon: "success",
           });

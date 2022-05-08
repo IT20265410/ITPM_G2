@@ -32,7 +32,7 @@ function CovidManage() {
                 <CovidManageH2>CUSTOMER DETAILS MANAGEMENT</CovidManageH2>
                 {/* <CovidManageIcon src={ViewOffer} /> */}
                 <h4>
-                  <NavLink to="/">Continue</NavLink>
+                  <NavLink to="/customer-list">Continue</NavLink>
                 </h4>
               </div>
             </CovidManageCard>
@@ -41,7 +41,7 @@ function CovidManage() {
                 <CovidManageH2>STAFF DETAILS MANAGEMENT</CovidManageH2>
                 {/* <CovidManageIcon src={PatientList} /> */}
                 <h4>
-                  <NavLink to="/">Continue</NavLink>
+                  <NavLink to="/viewp">Continue</NavLink>
                 </h4>
               </div>
             </CovidManageCard>
@@ -50,7 +50,7 @@ function CovidManage() {
                 <CovidManageH2>VEHICLE DETAILS MANAGEMENT</CovidManageH2>
                 {/* <CovidManageIcon src={CalculateFee} /> */}
                 <h4>
-                  <NavLink to="/">Continue</NavLink>
+                  <NavLink to="/viewvehicle">Continue</NavLink>
                 </h4>
               </div>
             </CovidManageCard>

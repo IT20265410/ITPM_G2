@@ -60,7 +60,7 @@ export default class Editp extends Component {
 
     componentDidMount() {
 
-        axios.get('http://localhost:4003/register/' + this.props.match.params.id)
+        axios.get('http://localhost:4800/register/' + this.props.match.params.id)
 
             .then(response => {
 
@@ -242,7 +242,7 @@ export default class Editp extends Component {
 
 
 
-        axios.post('http://localhost:4003/register/update/' + this.props.match.params.id, register)
+        axios.post('http://localhost:4800/register/update/' + this.props.match.params.id, register)
 
             .then(res => console.log(res.data));
 

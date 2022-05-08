@@ -112,7 +112,7 @@ export default class RegisterTeam extends Component {
 
         console.log(registerTeam);
 
-        axios.post('http://localhost:4003/team/add', registerTeam)
+        axios.post('http://localhost:4800/team/add', registerTeam)
             .then(res => console.log(res.data));
 
         alert("team member Added Succesfully!");

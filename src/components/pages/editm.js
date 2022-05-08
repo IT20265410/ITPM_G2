@@ -60,7 +60,7 @@ export default class Editm extends Component {
 
     componentDidMount() {
 
-        axios.get('http://localhost:4003/team/' + this.props.match.params.id)
+        axios.get('http://localhost:4800/team/' + this.props.match.params.id)
 
             .then(response => {
 
@@ -242,7 +242,7 @@ export default class Editm extends Component {
 
 
 
-        axios.post('http://localhost:4003/team/update/' + this.props.match.params.id, team)
+        axios.post('http://localhost:4800/team/update/' + this.props.match.params.id, team)
 
             .then(res => console.log(res.data));
 

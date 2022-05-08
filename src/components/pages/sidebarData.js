@@ -7,13 +7,13 @@ import * as ImIcons from 'react-icons/im';
 export const SidebarData = [
     {
         title: 'Home',
-        path: '/covidManage',
+        path: '/home',
         icon: <AiIcons.AiFillHome />,
         cName: 'nav-text'
     },
     {
         title: 'Customers',
-        path: '/',
+        path: '/customer-list',
         icon: <ImIcons.ImManWoman />,
         cName: 'nav-text'
     },
@@ -25,37 +25,43 @@ export const SidebarData = [
     },
     {
         title: 'Staff',
-        path: '/',
+        path: '/viewp',
         icon: <ImIcons.ImUsers />,
         cName: 'nav-text'
     },
     {
         title: 'Offer',
-        path: '/',
+        path: '/viewOffer',
         icon: <AiIcons.AiFillGift />,
         cName: 'nav-text'
     },
     {
         title: 'Rent',
-        path: '/',
+        path: '/viewrent',
         icon: <FaIcons.FaXRay />,
         cName: 'nav-text'
     },
     {
+        title: 'Team',
+        path: '/viewm',
+        icon: <ImIcons.ImUsers />,
+        cName: 'nav-text'
+    },
+    {
         title: 'Contact Us',
-        path: '/',
+        path: '/customer-contact-list',
         icon: <AiIcons.AiFillContacts />,
         cName: 'nav-text'
     },
     {
         title: 'About Us',
-        path: '/',
+        path: '/viewa',
         icon: <FaIcons.FaAmbulance />,
         cName: 'nav-text'
     },
     {
-        title: 'FQA',
-        path: '/',
+        title: 'FAQ',
+        path: '/viewFaq',
         icon: <AiIcons.AiOutlineDollarCircle />,
         cName: 'nav-text'
     }

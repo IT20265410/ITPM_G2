@@ -8,7 +8,7 @@ function SearchBar() {
     const [filteredData, setFilteredData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:4003/register/')
+        axios.get('http://localhost:4800/register/')
             .then((response) => {
                 setRegister(response.data);
             })

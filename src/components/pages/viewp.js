@@ -73,7 +73,7 @@ export default class Viewp extends Component {
 
 
     componentDidMount() {
-        axios.get('http://localhost:4003/register/')
+        axios.get('http://localhost:4800/register/')
             .then(response => {
                 this.setState({ register: response.data })
             })
@@ -83,7 +83,7 @@ export default class Viewp extends Component {
     }
 
     deleteRegister(id) {
-        axios.delete('http://localhost:4003/register/' + id)
+        axios.delete('http://localhost:4800/register/' + id)
             .then(res => console.log(res.data));
 
         this.setState({

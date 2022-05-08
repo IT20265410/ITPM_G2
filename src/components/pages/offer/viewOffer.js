@@ -82,7 +82,7 @@ export default class ViewOffer extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/offers/")
+      .get("http://localhost:4800/offers/")
       .then((response) => {
         this.setState({ offers: response.data });
       })
@@ -100,7 +100,7 @@ export default class ViewOffer extends Component {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        axios.delete(`http://localhost:5000/offers/${id}`).then((res) => {
+        axios.delete(`http://localhost:4800/offers/${id}`).then((res) => {
           swl("Offer Deleted Succesfully.", {
             icon: "success",
           });

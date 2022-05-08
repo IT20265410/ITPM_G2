@@ -35,7 +35,7 @@ export default class Edita extends Component {
 
     componentDidMount() {
 
-        axios.get('http://localhost:4003/aboutUs/' + this.props.match.params.id)
+        axios.get('http://localhost:4800/aboutUs/' + this.props.match.params.id)
 
             .then(response => {
 
@@ -114,7 +114,7 @@ export default class Edita extends Component {
 
 
 
-        axios.post('http://localhost:4003/aboutUs/update/' + this.props.match.params.id, aboutUs)
+        axios.post('http://localhost:4800/aboutUs/update/' + this.props.match.params.id, aboutUs)
 
             .then(res => console.log(res.data));
 

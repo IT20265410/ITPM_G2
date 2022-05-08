@@ -25,7 +25,7 @@ export default class UpdateFaq extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/faqs/" + this.props.match.params.id)
+      .get("http://localhost:4800/faqs/" + this.props.match.params.id)
       .then((response) => {
         this.setState({
           questionId: response.data.questionId,
@@ -39,7 +39,7 @@ export default class UpdateFaq extends Component {
       });
 
     // axios
-    //   .get("http://localhost:5000/offers/")
+    //   .get("http://localhost:4800/offers/")
     //   .then((response) => {
     //     if (response.data.length > 0) {
     //       this.setState({
@@ -88,7 +88,7 @@ export default class UpdateFaq extends Component {
 
     axios
       .put(
-        "http://localhost:5000/faqs/update/" + this.props.match.params.id,
+        "http://localhost:4800/faqs/update/" + this.props.match.params.id,
         faq
       )
       .then((res) => console.log(res.data));

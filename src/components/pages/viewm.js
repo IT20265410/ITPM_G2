@@ -74,7 +74,7 @@ export default class Viewm extends Component {
 
 
     componentDidMount() {
-        axios.get('http://localhost:4003/team/')
+        axios.get('http://localhost:4800/team/')
             .then(response => {
                 this.setState({ team: response.data })
             })
@@ -93,7 +93,7 @@ export default class Viewm extends Component {
             dangerMode: true,
         }).then((willDelete) => {
             if (willDelete) {
-                axios.delete('http://localhost:4003/team/ ${id}').then((res) => {
+                axios.delete('http://localhost:4800/team/ ${id}').then((res) => {
                     swl("Vehicle Deleted Succesfully.", {
                         icon: "success",
                     });
