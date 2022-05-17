@@ -4,28 +4,30 @@ import './pharmacy.css';
 
 function SearchBar() {
     const [search, setSearch] = useState('');
-    const [customers, setCustomers] = useState([]);
+    const [madicines, setMadicines] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:4800/customers/')
+        axios.get('http://localhost:4800/madicines/')
             .then((response) => {
-                setCustomers(response.data);
+                setMadicines(response.data);
             })
     }, [])
 
     useEffect(() => {
         setFilteredData(
-            customers.filter((customers) => customers.mname.toLowerCase().includes(search.toLowerCase()))
+            madicines.filter((madicines) => madicines.cname.toLowerCase().includes(search.toLowerCase()))||
+            madicines.filter((madicines) => madicines.id.toLowerCase().includes(search.toLowerCase()))
         )
-    }, [search], customers)
+    }, [search], madicines)
 
     return (
         <div className="searchMadicinePage">
             <br />
             <div className='container' id="searchMadicinForm">
-                <h3 className="searchMadicinTitle">SEARCH CUSTOMER DETAILS</h3>
-                <h5>Enter Customer Name To View Customer Name And Details </h5>
+                <h2 className="searchMadicinTitle">SEARCH CUSTOMER DETAILS</h2>
+                <br />
+                <h5 >Enter Customer Name To View Customer Name And Details </h5>
                 <br />
                 <input className="searchBar" type="text" placeholder="Search..." onChange={(e) => {
                     setSearch(e.target.value); 
@@ -40,7 +42,7 @@ function SearchBar() {
                     <tbody>
                         {filteredData.map((val) => {
                             return <div key={val.id}>
-                                <td>{val.cnames}</td>
+                                <td>{val.cname}</td>
                                 <td>{val.cemail}</td>
                                 <td>{val.caddress}</td>
                                 <td>{val.nic}</td>

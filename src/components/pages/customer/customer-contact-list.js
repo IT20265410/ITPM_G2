@@ -55,7 +55,13 @@ export default class ViewContacts extends Component {
                          
                     <h3 className="viewMedicineTitle">CONTACTS LIST</h3>
                     <br />
-                    <table className="table">
+                    <marquee>
+                    <h3 style={{ color: "#8B0000" }}>
+                    <i>If you have an issue please contact us..!</i>
+                    </h3>
+                    </marquee> <br />
+
+                    <table id="carTable">
                         <thead className="thead-light">
                         <tr>
                         <th>National Advertising Team Email</th> 
@@ -66,7 +72,7 @@ export default class ViewContacts extends Component {
                         <th>Rath Vahana.lk Offices Team Number</th>
                         <th>Billing Department Email</th> 
                         <th>Billing Department Number</th> 
-                        <th>Actions</th>
+                        
                         </tr>
                         </thead>
                         <tbody>

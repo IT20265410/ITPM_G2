@@ -16,7 +16,10 @@ function SearchBar() {
 
     useEffect(() => {
         setFilteredData(
-            contacts.filter((contacts) => contacts.mname.toLowerCase().includes(search.toLowerCase()))
+            contacts.filter((contacts) => contacts.nate.toLowerCase().includes(search.toLowerCase())) ||
+            contacts.filter((contacts) => contacts.prte.toLowerCase().includes(search.toLowerCase())) ||
+            contacts.filter((contacts) => contacts.bde.toLowerCase().includes(search.toLowerCase())) ||
+            contacts.filter((contacts) => contacts.rvote.toLowerCase().includes(search.toLowerCase()))
         )
     }, [search], contacts)
 
@@ -34,7 +37,7 @@ function SearchBar() {
                 <table className="table">
                     <thead className="thead-light" >
                         <tr>
-                            <th style={{color:"white"}}>Contact Details</th>
+                            <th style={{color:"black"}}>Contact Details</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -73,7 +73,7 @@ export default class Viewvehicle extends Component {
 
 
     componentDidMount() {
-        axios.get('http://localhost:4009/addvehicle/')
+        axios.get('http://localhost:4800/addvehicle/')
             .then(response => {
                 this.setState({ addvehicle: response.data })
             })
@@ -107,7 +107,7 @@ export default class Viewvehicle extends Component {
                         <div className='row'>
                         <div className='col-3 buttons'>
                             <Link to="/searchvehicle" type="button" className="btn btn-secondary">
-                                Search Vehicle details
+                                Search Vehicle Details
                             </Link>
                             <br />
                         </div>

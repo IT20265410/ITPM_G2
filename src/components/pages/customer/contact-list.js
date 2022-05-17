@@ -98,30 +98,41 @@ export default class ViewContacts extends Component {
         return (
             <div className='viewMedicinePage'>
                 <br /> 
-                <div className='container' id="viewMedicineForm"> 
-                        <div className='row'>
-                        <div className='col-2 buttons'>
-                            <Link to="/searchContact" type="button" className="btn btn-secondary">
-                            Search Contacts
-                            </Link>
-                            <br />
-                        </div> 
-                        <div className='col-4 buttons'>
-                            <Link to="/create" type="button" className="btn btn-primary">
-                            Add Contacts
-                            </Link>
-                            <br />
-                        </div></div> 
-                        <br/> 
-                        <div className="col-3 buttons2">
-            <Link onClick={() => this.exportPDF()} className="btn btn-warning">
-              &nbsp;&nbsp;Genarate Report
-            </Link>
-            <br />
-            <br />
-            </div>
-                    <h3 className="viewMedicineTitle">CONTACTS LIST</h3>
+                <h3 className="viewMedicineTitle">CONTACTS LIST</h3>
                     <br />
+                <div className='container' id="viewMedicineForm"> 
+                <div className="row">
+            <div className="col-2 buttons">
+              <Link to="/create-contacts" type="button" className="btn btn-primary">
+                <i className="far fa-edit"></i> &nbsp;&nbsp;Add Contact
+              </Link>
+              <br />
+            </div>
+            <div className="col-3 buttons2">
+              <Link
+                onClick={() => this.exportPDF()}
+                className="btn btn-warning"
+              >
+                &nbsp;&nbsp;Genarate Report
+              </Link>
+              <br />
+              <br />
+            </div>
+            <div className="col-6 buttons2">
+              <div className="col-4 buttons" style={{ marginLeft: "500px" }}>
+                <Link
+                  to="/searchContact"
+                  type="button"
+                  className="btn btn-success"
+                >
+                  Search Contact Details
+                </Link>
+                <br />
+              </div>
+            </div>
+          </div>
+          <br />
+                    
                     <table className="table">
                         <thead className="thead-light">
                         <tr>

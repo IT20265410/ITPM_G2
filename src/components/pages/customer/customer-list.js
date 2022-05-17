@@ -108,38 +108,44 @@ export default class ViewMadicines extends Component {
                 
                 <div className='container' id="viewMedicineForm">
 
-                        <div className='row'>
-                        <div className='col-2 buttons'>
-                            <Link to="/searchCustomer" type="button" className="btn btn-secondary">
-                            Search Customer
-                            </Link>
-                            <br />
-                        </div>
-                        
-
-                        <div className='col-4 buttons'>
-                            <Link to="/create" type="button" className="btn btn-primary">
-                            Add Customer
-                            </Link>
-                            <br />
-                        </div></div>
-
-                        <br/>
-
-
-                        <div className="col-3 buttons2">
-            <Link onClick={() => this.exportPDF()} className="btn btn-warning">
-              &nbsp;&nbsp;Genarate Report
-            </Link>
-            <br />
-            <br />
-          </div>
-
-
-
-
-                    <h3 className="viewMedicineTitle">CUSTOMERS LIST</h3>
+                <h3 className="viewMedicineTitle">CUSTOMERS LIST</h3>
                     <br />
+
+                    <div className="row">
+            <div className="col-2 buttons">
+              <Link to="/create" type="button" className="btn btn-primary">
+                <i className="far fa-edit"></i> &nbsp;&nbsp;Add Customer
+              </Link>
+              <br />
+            </div>
+            <div className="col-3 buttons2">
+              <Link
+                onClick={() => this.exportPDF()}
+                className="btn btn-warning"
+              >
+                &nbsp;&nbsp;Genarate Report
+              </Link>
+              <br />
+              <br />
+            </div>
+            <div className="col-6 buttons2">
+              <div className="col-4 buttons" style={{ marginLeft: "500px" }}>
+                <Link
+                  to="/searchCustomer"
+                  type="button"
+                  className="btn btn-success"
+                >
+                  Search Customer Details
+                </Link>
+                <br />
+              </div>
+            </div>
+          </div>
+          <br />
+
+
+
+                    
                     <table className="table">
                         <thead className="thead-light">
                             <tr>

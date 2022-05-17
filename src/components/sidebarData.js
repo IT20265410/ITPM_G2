@@ -49,7 +49,7 @@ export const SidebarData = [
     },
     {
         title: 'Contact Us',
-        path: '/customer-contact-list',
+        path: '/contact-list',
         icon: <AiIcons.AiFillContacts />,
         cName: 'nav-text'
     },

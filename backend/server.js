@@ -39,6 +39,8 @@ app.use('/rentv', rentvRouter);
 app.use('/madicines', madicinesRouter);
 app.use('/contacts', contactsRouter);  
 
+app.use('/users', require('./routes/auth'));
+
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });

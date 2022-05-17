@@ -127,30 +127,37 @@ export default class Viewrent extends Component {
                        
                         <center><h3 className="addcovid1Title">Rent on Vehicles</h3></center>
 
-                        <div className='row'>
-                        <div className='col-2 buttons'>
-                            <Link to="/" type="button" className="btn btn-secondary">
-                                Search Vehicle details
-                            </Link>
-                            <br />
-                        </div>
-
-              <div className='col-2 buttons'>
-                            <Link to="/rentv" type="button" className="btn btn-primary">
-                             ADD RENT DETAILS
-                            </Link>
-                            <br />
-                        </div></div>
-
-                        <br/>
-
-
-                        <div className="col-4 buttons2">
-            <Link onClick={() => this.exportPDF()} className="btn btn-warning">
-              &nbsp;&nbsp;Genarate Report
-            </Link>
-            <br />
-            <br /></div>
+                        <div className="row">
+            <div className="col-2 buttons">
+              <Link to="/rentv" type="button" className="btn btn-primary">
+                <i className="far fa-edit"></i> &nbsp;&nbsp;Add Rent Details
+              </Link>
+              <br />
+            </div>
+            <div className="col-3 buttons2">
+              <Link
+                onClick={() => this.exportPDF()}
+                className="btn btn-warning"
+              >
+                &nbsp;&nbsp;Genarate Report
+              </Link>
+              <br />
+              <br />
+            </div>
+            <div className="col-6 buttons2">
+              <div className="col-4 buttons" style={{ marginLeft: "500px" }}>
+                <Link
+                  to="/searchrent"
+                  type="button"
+                  className="btn btn-success"
+                >
+                  Search Vehicle Details
+                </Link>
+                <br />
+              </div>
+            </div>
+          </div>
+          <br />
         
 
                         <table className="table">

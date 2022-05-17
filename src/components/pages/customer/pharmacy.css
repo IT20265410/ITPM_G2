@@ -46,11 +46,7 @@
 	background-size: cover;
 }
 
-#viewMedicineForm{
-	max-width: 1500px; 
-  	padding: 16px;
-  	background-color:rgb(221, 221, 127);
-}
+
 
 .editMedicinePage{
 	background: url("https://wallpapercave.com/wp/wp9028402.jpg") no-repeat center center fixed;
@@ -105,17 +101,18 @@
   min-height: 900px;
 }
 .searchMadicinePage h5{  
-	color: rgb(255, 255, 255);
+	color: rgb(17, 16, 16);
 	margin: 0;
 	height: 60px;
 }
-.searchMadicinTitle{
-	font-size: 50px;
-	text-align: center;
-	color: rgb(255, 255, 255);
-	margin: 0;
-	height: 60px;
-}
+
+#searchMadicinForm{
+    max-width: 700px;
+    height:850px;
+	width: 1600px;
+    padding: 16px;
+    background-color: rgb(196, 189, 189);
+  }
 .searchBar{
 	width:400px;
 }
@@ -151,7 +148,6 @@
   min-height: 900px;
 }
 .searchMadicinTitle{
-	font-size: 50px;
 	text-align: center;
 	color: rgb(17, 16, 16);
 	margin: 0;

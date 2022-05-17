@@ -1,7 +1,7 @@
 .home{
-    background-color:deepskyblue;
-}
-
+    background-color:rgb(180, 180, 180);
+    height: 65px;
+} 
 .homeImage{
     margin: auto;
     display: block;
