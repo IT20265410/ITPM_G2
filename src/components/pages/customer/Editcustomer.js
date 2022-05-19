@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import './pharmacy.css';
+import './customer.css';
 export default class EditPatient extends Component {
   constructor(props) {
     super(props);
@@ -29,7 +29,7 @@ export default class EditPatient extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4800/madicines/' + this.props.match.params.id)
+    axios.get('http://localhost:4800/customers/' + this.props.match.params.id)
       .then(response => {
         this.setState({
           cname:  response.data.cname,
@@ -92,7 +92,7 @@ export default class EditPatient extends Component {
 
     console.log(exercise);
 
-    axios.post('http://localhost:4800/madicines/update/' + this.props.match.params.id, exercise)
+    axios.post('http://localhost:4800/customers/update/' + this.props.match.params.id, exercise)
       .then(res => console.log(res.data));
 
       alert("Customer Details Updated !")
