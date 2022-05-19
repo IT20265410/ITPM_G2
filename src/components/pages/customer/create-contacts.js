@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'; 
 import "react-datepicker/dist/react-datepicker.css";
-import './pharmacy.css';
+import './customer.css';
 import swl from "sweetalert";
 
 export default class AddContact extends Component {
