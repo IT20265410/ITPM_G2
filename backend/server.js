@@ -25,7 +25,7 @@ const registerRouter = require('./routes/register');
 const aboutUsRouter = require('./routes/aboutUs');
 const teamRouter = require('./routes/team');
 const rentvRouter = require('./routes/rentv');
-const madicinesRouter = require('./routes/madicines');
+const customersRouter = require('./routes/customers');
 const contactsRouter = require('./routes/contacts');
 
 
@@ -36,7 +36,7 @@ app.use('/register', registerRouter);
 app.use('/aboutUs', aboutUsRouter);
 app.use('/team', teamRouter);
 app.use('/rentv', rentvRouter);  
-app.use('/madicines', madicinesRouter);
+app.use('/customers', customersRouter);
 app.use('/contacts', contactsRouter);  
 
 app.use('/users', require('./routes/auth'));
