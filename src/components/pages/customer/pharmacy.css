@@ -46,8 +46,13 @@
 	background-size: cover;
 }
 
-
-
+.viewMedicinesPage{
+	background-image: url("./Contact-Image.jpg");
+	background-position: center;
+    min-height: 900px;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 .editMedicinePage{
 	background: url("https://wallpapercave.com/wp/wp9028402.jpg") no-repeat center center fixed;
 	background-position: center;

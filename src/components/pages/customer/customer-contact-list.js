@@ -47,7 +47,7 @@ export default class ViewContacts extends Component {
     } 
     render() {
         return (
-            <div className='viewMedicinePage'>
+            <div className='viewMedicinesPage'>
                 <br /> 
                 <div className='container' id="viewMedicineForm"> 
                          

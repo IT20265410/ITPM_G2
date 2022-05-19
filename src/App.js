@@ -60,7 +60,7 @@ import Viewcm from "./components/pages/aboutUs_cs/viewcm";
 //Naveen
 import AddMadicine from "./components/pages/customer/create";
 import ViewMadicines from "./components/pages/customer/customer-list";
-import EditMadicine from "./components/pages/customer/editcustomer";
+import EditMadicine from "./components/pages/customer/Editcustomer";
 import SearchCustomer from './components/pages/customer/searchCustomer';
 import AddContacts from './components/pages/customer/create-contacts';  
 import ViewContact from './components/pages/customer/contact-list';
@@ -138,7 +138,7 @@ function App() {
 
        <Route path="/create" component={AddMadicine} />
        <Route path="/customer-list" component={ViewMadicines} />      
-       <Route path="/editcustomer/:id" component={EditMadicine} />
+       <Route path="/Editcustomer/:id" component={EditMadicine} />
        <Route path='/searchCustomer' component={SearchCustomer} />
        <Route path="/create-contacts" component={AddContacts} />
        <Route path='/contact-list' component={ViewContact} /> 
