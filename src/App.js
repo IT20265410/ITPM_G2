@@ -132,10 +132,7 @@ function App() {
        <Route path="/registerTeam" component={RegisterTeam} />
        <Route path="/viewm" component={Viewm} />
        <Route path="/viewcm" component={Viewcm} />
-
-
-
-
+  
        <Route path="/create" component={AddMadicine} />
        <Route path="/customer-list" component={ViewMadicines} />      
        <Route path="/Editcustomer/:id" component={EditMadicine} />
