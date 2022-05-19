@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import './pharmacy.css';
+import './customer.css';
 
 function SearchBar() {
     const [search, setSearch] = useState('');
-    const [madicines, setMadicines] = useState([]);
+    const [customers, setCustomers] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:4800/madicines/')
+        axios.get('http://localhost:4800/customers/')
             .then((response) => {
-                setMadicines(response.data);
+                setCustomers(response.data);
             })
     }, [])
 
     useEffect(() => {
         setFilteredData(
-            madicines.filter((madicines) => madicines.cname.toLowerCase().includes(search.toLowerCase()))||
-            madicines.filter((madicines) => madicines.id.toLowerCase().includes(search.toLowerCase()))
+            customers.filter((customers) => customers.cname.toLowerCase().includes(search.toLowerCase()))||
+            customers.filter((customers) => customers.id.toLowerCase().includes(search.toLowerCase()))
         )
-    }, [search], madicines)
+    }, [search], customers)
 
     return (
         <div className="searchMadicinePage">

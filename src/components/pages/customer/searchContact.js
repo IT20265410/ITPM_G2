@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import './pharmacy.css';
+import './customer.css';
 
 function SearchBar() {
     const [search, setSearch] = useState('');
