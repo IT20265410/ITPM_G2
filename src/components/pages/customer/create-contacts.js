@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios'; 
-import "react-datepicker/dist/react-datepicker.css";
 import './pharmacy.css';
 import swl from "sweetalert";
 
@@ -27,7 +26,6 @@ export default class AddContact extends Component {
       rvotn:'',
       bde:'',
       bdn:'',
-      users: []
     }
   }
 
@@ -75,7 +73,7 @@ export default class AddContact extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const contact = {
+    const contacts = {
       nate: this.state.nate,
       natn: this.state.natn,
       prte: this.state.prte,
@@ -86,16 +84,16 @@ export default class AddContact extends Component {
       bdn: this.state.bdn,
     }
 
-    console.log(contact);
+    console.log(contacts);
 
-    axios.post('http://localhost:4800/madicines/add', contact)
+    axios.post('http://localhost:4800/contacts/add', contacts)
       .then(res => console.log(res.data));
 
       swl("Contact Details Added Succesfully.", {
         icon: "success",
     });
 
-    window.location = '/customer-List';
+    window.location = '/contact-List';
   }
 
   render() {

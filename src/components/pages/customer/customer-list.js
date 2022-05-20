@@ -4,6 +4,7 @@ import axios from 'axios';
 import "./pharmacy.css";
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
+import * as FaIcons from 'react-icons/fa';
 
 const Madicines = props => (
     <tr>
@@ -15,7 +16,16 @@ const Madicines = props => (
     <td>{props.madicines.mobileno.substring(0,15)}</td>
 
         <td>
-            <Link to={"/editcustomer/" + props.madicines._id}>edit</Link> | <a href="customer-list" onClick={() => { props.deleteMadicines(props.madicines._id) }}>delete</a>
+        <Link to={"/editcustomer/" + props.madicines._id } type="button" className="btn btn-secondary">
+                <i className="far fa-edit"></i> &nbsp;&nbsp;Edit
+              </Link>
+              <br />
+          
+            
+            <button onClick={() => { props.deleteMadicines(props.madicines._id) }} className="btn btn-danger"
+            style={{ position: 'relative', top: "-38px", left: "110px"}}
+>
+            <FaIcons.FaTrash /> &nbsp;&nbsp;Delete</button>
         </td>
     </tr>
 )
@@ -114,7 +124,7 @@ export default class ViewMadicines extends Component {
                     <div className="row">
             <div className="col-2 buttons">
               <Link to="/create" type="button" className="btn btn-primary">
-                <i className="far fa-edit"></i> &nbsp;&nbsp;Add Customer
+                <i className="far fa-plus-square"></i> &nbsp;&nbsp;Add Customer
               </Link>
               <br />
             </div>
@@ -122,7 +132,7 @@ export default class ViewMadicines extends Component {
               <Link
                 onClick={() => this.exportPDF()}
                 className="btn btn-warning"
-              >
+              ><FaIcons.FaFilePdf /> 
                 &nbsp;&nbsp;Genarate Report
               </Link>
               <br />
@@ -134,8 +144,9 @@ export default class ViewMadicines extends Component {
                   to="/searchCustomer"
                   type="button"
                   className="btn btn-success"
-                >
-                  Search Customer Details
+                ><FaIcons.FaSearch /> 
+                &nbsp;&nbsp;
+                  Search Details
                 </Link>
                 <br />
               </div>
@@ -149,13 +160,13 @@ export default class ViewMadicines extends Component {
                     <table className="table">
                         <thead className="thead-light">
                             <tr>
-                            <th>Customer Name</th> 
-                        <th>Email</th> 
-                        <th>Address</th> 
-                        <th>NIC</th> 
-                        <th>Gender</th> 
-                        <th>MobileNo</th> 
-                        <th>Actions</th>
+                            <th style={{ width: "220px" }} className="viewlist">Customer Name</th> 
+                        <th className="viewlist">Email</th> 
+                        <th className="viewlist">Address</th> 
+                        <th className="viewlist">NIC</th> 
+                        <th className="viewlist">Gender</th> 
+                        <th className="viewlist">MobileNo</th> 
+                        <th style={{ width: "320px" }} className="viewlist"></th>
                             </tr>
                         </thead>
                         <tbody>
