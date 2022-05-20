@@ -103,12 +103,12 @@ export default class ViewCustomers extends Component {
 
     render() {
         return (
-            <div className='viewMedicinePage'>
+            <div className='viewCustomerPage'>
                 <br />
                 
-                <div className='container' id="viewMedicineForm">
+                <div className='container' id="viewCustomerForm">
 
-                <h3 className="viewMedicineTitle">CUSTOMERS LIST</h3>
+                <h3 className="viewCustomerTitle">CUSTOMERS LIST</h3>
                     <br />
 
                     <div className="row">

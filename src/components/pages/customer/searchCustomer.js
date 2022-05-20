@@ -22,10 +22,10 @@ function SearchBar() {
     }, [search], customers)
 
     return (
-        <div className="searchMadicinePage">
+        <div className="searchCustomerPage">
             <br />
-            <div className='container' id="searchMadicinForm">
-                <h2 className="searchMadicinTitle">SEARCH CUSTOMER DETAILS</h2>
+            <div className='container' id="searchCustomerForm">
+                <h2 className="searchCustomerTitle">SEARCH CUSTOMER DETAILS</h2>
                 <br />
                 <h5 >Enter Customer Name To View Customer Name And Details </h5>
                 <br />

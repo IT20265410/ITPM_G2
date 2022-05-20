@@ -87,10 +87,10 @@ export default class AddMadicine extends Component {
 
   render() {
     return (
-      <div className='addMedicinePage'>
+      <div className='addCustomerPage'>
         <br />
-        <div className='container' id="addMedicineForm">
-          <h3 className="addMedicineTitle">Add New Customer</h3>
+        <div className='container' id="addCustomerForm">
+          <h3 className="addCustomerTitle">Add New Customer</h3>
           <br />
           <form onSubmit={this.onSubmit}>
           <div className="form-group"> 
