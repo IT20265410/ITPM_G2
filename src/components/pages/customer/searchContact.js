@@ -34,7 +34,7 @@ function SearchBar() {
                     setSearch(e.target.value); 
                 }} />
                 <br /><br />
-                <table className="table">
+                <table id="offerTable">
                     <thead className="thead-light" >
                         <tr>
                             <th style={{color:"black"}}>Contact Details</th>
