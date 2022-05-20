@@ -36,6 +36,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     }
 
     return (
+        <div className='LoginPage'>
         <div className="register-form">
             <h1 className="heading">Sign Up</h1>
             <p className="lead">
@@ -87,7 +88,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             <p className="link">
                 Already have an account? <Link to="/login">Sign In</Link>
             </p>
-        </div>
+        </div></div>
     );
 };
 
