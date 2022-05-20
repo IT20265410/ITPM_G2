@@ -4,6 +4,7 @@ import axios from "axios";
 import swl from "sweetalert";
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
+import * as FaIcons from 'react-icons/fa';
 
 const Offer = (props) => (
   <tr>
@@ -15,15 +16,16 @@ const Offer = (props) => (
     <td>{props.offer.startingDate.substring(0, 10)}</td>
     <td>{props.offer.endingDate.substring(0, 10)}</td>
     <td>
-      <Link to={"/updateOffer/" + props.offer._id}>Edit</Link> |
-      <a
-        href="#"
-        onClick={() => {
-          props.deleteOffer(props.offer._id);
-        }}
-      >
-        delete
-      </a>
+    <Link to={"/updateOffer/" + props.offer._id } type="button" className="btn btn-secondary">
+                <i className="far fa-edit"></i> &nbsp;&nbsp;Edit
+              </Link>
+              <br />
+          
+            
+            <button onClick={() => { props.deleteOffer(props.offer._id) }} className="btn btn-danger"
+            style={{ position: 'relative', top: "-38px", left: "110px"}}
+>
+            <FaIcons.FaTrash /> &nbsp;&nbsp;Delete</button>
     </td>
   </tr>
 );
@@ -135,7 +137,7 @@ export default class ViewOffer extends Component {
           <div className="row">
             <div className="col-2 buttons">
               <Link to="/createOffer" type="button" className="btn btn-primary">
-                <i className="far fa-edit"></i> &nbsp;&nbsp;Add Offer
+                <i className="far fa-plus-square"></i> &nbsp;&nbsp;Add Offer
               </Link>
               <br />
             </div>
@@ -143,8 +145,8 @@ export default class ViewOffer extends Component {
               <Link
                 onClick={() => this.exportPDF()}
                 className="btn btn-warning"
-              >
-                &nbsp;&nbsp;Genarate Report
+              ><FaIcons.FaFilePdf /> 
+              &nbsp;&nbsp;Genarate Report
               </Link>
               <br />
               <br />
@@ -155,7 +157,8 @@ export default class ViewOffer extends Component {
                   to="/searchOffer"
                   type="button"
                   className="btn btn-success"
-                >
+                ><FaIcons.FaSearch /> 
+                &nbsp;&nbsp;
                   Search Offer details
                 </Link>
                 <br />
@@ -177,7 +180,7 @@ export default class ViewOffer extends Component {
                 <th style={{ width: "240px" }}>Special Notice</th>
                 <th>Starting Date</th>
                 <th>Ending Date</th>
-                <th>Action</th>
+                <th style={{ width: "250px" }}>Action</th>
               </tr>
             </thead>
             <tbody>{this.offerList()}</tbody>
