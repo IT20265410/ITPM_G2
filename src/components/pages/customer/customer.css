@@ -1,4 +1,4 @@
-.addMedicineTitle{
+.addCustomerTitle{
 	color: black;
 	font-size: 50px;
 	text-align: center;
@@ -6,7 +6,7 @@
 	height: 60px;
 }
 
-.viewMedicineTitle{
+.viewCustomerTitle{
 	font-size: 50px;
 	text-align: center;
 	color: black;
@@ -14,7 +14,7 @@
 	height: 60px;
 }
  
-.createPatientTitle{
+.createCusTitle{
 	font-size: 50px;
 	text-align: center;
 	color: black; 
@@ -22,7 +22,7 @@
 	height: 60px;
 }
 
-.addMedicinePage{
+.addCustomerPage{
 	background: url("https://wallpapercave.com/wp/wp9028402.jpg") no-repeat center center fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -31,14 +31,14 @@
   	
 }
 
-#addMedicineForm{
+#addCustomerForm{
 	max-width: 800px;
 	margin-left: 500px;
 	padding: 16px;
 	background-color:#818181e3;
 }
 
-.viewMedicinePage{
+.viewCustomerPage{
 	background: url("https://www.affordabletravelplan.com/wp-content/uploads/2017/10/Car-Rentals-2.jpg");
 	background-position: center;
     min-height: 900px;
@@ -46,14 +46,14 @@
 	background-size: cover;
 }
   
-.viewMedicinesPage{
+.viewCustomersPage{
 	background-image: url("./Contact-Image.jpg");
 	background-position: center;
     min-height: 900px;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-.editMedicinePage{
+.editCustomerPage{
 	background: url("https://wallpapercave.com/wp/wp9028402.jpg") no-repeat center center fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -61,14 +61,14 @@
 	min-height: 900px;
 }
 
-#editMedicineForm{
+#editCustomerForm{
 	margin-left: 500px;
   max-width: 800px;
   padding: 16px;
   background-color: rgba(248, 135, 135, 0.918);
 }
 
-.createPatientPage{
+.createCusPage{
   	background: url("https://www.incimages.com/uploaded_files/image/1920x1080/getty_643024904_20001334181884391236_361786.jpg") no-repeat center center fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -76,13 +76,13 @@
 	min-height: 700px;
 }
 
-#createPatientForm{
+#createCusForm{
 	max-width: 800px;
 	padding: 16px;
 	margin-left: 100px;
 	background-color:rgb(30, 238, 141);
 }
-.searchMadicineBtn{
+.searchCustomerBtn{
 	align-items: left;
 	border-radius: 8px;
 	background-color:rgb(250, 230, 49);
@@ -93,25 +93,25 @@
 	transition-duration: 0.4s;
 }
 
-.searchMadicineBtn:hover {
+.searchCustomerBtn:hover {
 	background-color: rgb(142, 245, 245);
 	font-weight: bold;
 }
 
-.searchMadicinePage{
+.searchCustomerPage{
 	background: url("https://wallpaperbat.com/img/567969-car-wallpaper-top-free-2560x1440-car-background.jpg") no-repeat center center fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 900px;
 }
-.searchMadicinePage h5{  
+.searchCustomerPage h5{  
 	color: rgb(17, 16, 16);
 	margin: 0;
 	height: 60px;
 }
 
-#searchMadicinForm{
+#searchCustomerForm{
     max-width: 700px;
     height:850px;
 	width: 1600px;
@@ -152,7 +152,7 @@
   background-size: cover;
   min-height: 900px;
 }
-.searchMadicinTitle{
+.searchCustomerTitle{
 	text-align: center;
 	color: rgb(17, 16, 16);
 	margin: 0;
