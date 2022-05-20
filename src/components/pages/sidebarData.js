@@ -56,7 +56,7 @@ export const SidebarData = [
     {
         title: 'About Us',
         path: '/viewa',
-        icon: <FaIcons.FaAmbulance />,
+        icon: <FaIcons.FaInfoCircle />,
         cName: 'nav-text'
     },
     {

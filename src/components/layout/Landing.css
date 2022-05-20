@@ -234,11 +234,18 @@ a {
 	
 }
 .keyw{
-	color: rgb(248, 2, 14);
+	color: rgb(248, 241, 241);
 	
 }
 a {
-    color: #ffc107;
+    color: #00e2f2;
    
 }
 
+.LoginPage{
+	background: url("https://media.istockphoto.com/photos/blurred-new-cars-dealership-place-picture-id504133748?b=1&k=20&m=504133748&s=170667a&w=0&h=FvgvPKB0hokUpcCF5-ybRcaRks6XbYJh5fP_0bOMC-I=") no-repeat center center fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    min-height: 700px;
+}
