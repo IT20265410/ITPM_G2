@@ -49,15 +49,17 @@
     border: 1px solid rgb(34, 32, 32);
     text-align: left;
 }
-  
 .table td{
     padding:15px;
 }
-  
 .table tr:nth-child(even)
 {
    background-color: #e5f3f7;
 }
+td{
+padding: 15px;
+}
+
    
 .table tr:nth-child(odd)
 {
@@ -186,9 +188,8 @@ min-height: 600px;
 }
 
 #addrent1Title{
-  color: rgb(2, 2, 250);
+  color: rgb(251, 255, 255);
   text-shadow: 2px 2px 5px red;
-  background-color: #dcdfcb;
   background-size: 5px;
   background-size: auto;
   width: 400px;
@@ -201,7 +202,7 @@ min-height: 600px;
   }
 
   .addRentPage{
-	background: url("https://wallpaperaccess.com/full/5416653.jpg") no-repeat center center fixed;
+	background: url("https://media.istockphoto.com/photos/front-view-of-fictitious-car-picture-id1134703571?b=1&k=20&m=1134703571&s=170667a&w=0&h=2O1JShQoAK2DIqoZ2kTpgAOaS7F-1e4cXpc0KBw6UiQ=") no-repeat center center fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -229,5 +230,35 @@ min-height: 600px;
 }
 
 #carTable tr:hover {
-    background-color: rgb(240, 244, 2);
+    background-color: rgb(162, 162, 145);
+}
+
+tr:nth-child(even)
+
+{
+
+   background-color: #e5f3f7;
+
+}
+
+   
+
+tr:nth-child(odd)
+
+{
+
+   background-color: #e5f3f7;
+
+}
+
+th:nth-child(odd){
+
+    background-color:#dcdfcb;
+
+}
+
+th:nth-child(even){
+
+    background-color: #dcdfcb;
+
 }

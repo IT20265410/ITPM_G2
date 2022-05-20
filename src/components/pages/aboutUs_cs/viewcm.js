@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import swl from "sweetalert";
-//import './register.css';
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
 import '../vehicle.css';
@@ -68,7 +67,6 @@ export default class Viewcm extends Component {
 
 
     componentDidMount() {
-
         axios.get('http://localhost:4800/team/')
             .then(response => {
                 this.setState({ team: response.data })
@@ -89,7 +87,6 @@ export default class Viewcm extends Component {
         }).then((willDelete) => {
             if (willDelete) {
                 axios.delete('http://localhost:4800/team/ ${id}').then((res) => {
-
                     swl("Vehicle Deleted Succesfully.", {
                         icon: "success",
                     });
@@ -116,7 +113,7 @@ export default class Viewcm extends Component {
     
     render() {
         return (
-            <div className='addvehiclePage' id="viewTable">
+            <div className='addAboutPage' id="viewTable">
                 <br />
                 <center><h1 className="addcovid1Title">More About Rathavahana.lk</h1></center>
                 <center><h3 className="addcovid1Title">Why Choose Us</h3></center>
@@ -129,9 +126,9 @@ export default class Viewcm extends Component {
                 
                    <center> <thead className="thead-light">
                         <tr id="tablist">
-                            <center><th className="viewlist"> Vehicle hire in Sri Lanka is not an easy way to all, with Ratha vahana.lk  you can enjoy vehicle rental in Sri Lanka at the coolest budget ways.</th></center>
-                            <center><th className="viewlist">you can enjoy vehicle rental in Sri Lanka at the coolest budget ways.</th></center>
-                            <center><th className="viewlist">We believe in providing the highest level of services at the lowest price. 24/7 working time. So you can enjoy your ride anytime. </th></center>
+                            <center><th > Vehicle hire in Sri Lanka is not an easy way to all, with Ratha vahana.lk  you can enjoy vehicle rental in Sri Lanka at the coolest budget ways.</th></center>
+                            <center><th >you can enjoy vehicle rental in Sri Lanka at the coolest budget ways.</th></center>
+                            <center><th >We believe in providing the highest level of services at the lowest price. 24/7 working time. So you can enjoy your ride anytime. </th></center>
 
                         </tr>
                     </thead>
