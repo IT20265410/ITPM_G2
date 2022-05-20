@@ -2,8 +2,10 @@ import React, { Component, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import "./pharmacy.css";
+import swl from "sweetalert";
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
+import * as FaIcons from 'react-icons/fa';
 
 const Contacts = props => (
     <tr>
@@ -16,7 +18,16 @@ const Contacts = props => (
     <td>{props.contacts.bde}</td>
     <td>{props.contacts.bdn.substring(0,15)}</td> 
     <td>
-        <Link to={"/Editcontact/" + props.contacts._id}>edit</Link> | <a href="contact-list" onClick={() => { props.deleteContacts(props.contacts._id) }}>delete</a>
+    <Link to={"/Editcontact/" +  props.contacts._id } type="button" className="btn btn-secondary">
+                <i className="far fa-edit"></i> &nbsp;&nbsp;Edit
+              </Link>
+              <br />
+          
+            
+            <button onClick={() => { props.deleteContacts(props.contacts._id) }} className="btn btn-danger"
+            style={{ position: 'relative', top: "8px"}}
+>
+            <FaIcons.FaTrash /> &nbsp;&nbsp;Delete</button>
     </td>
     </tr>
 )
@@ -80,15 +91,31 @@ export default class ViewContacts extends Component {
                 console.log(error);
             })
     } 
-    deleteContacts(id) {
-        axios.delete('http://localhost:4800/contacts/' + id)
-            .then(res => console.log(res.data));
 
-        this.setState({
-            contacts: this.state.contacts.filter(sml => sml._id !== id)
-        })
-        alert("Delete Contacts Details?")
-    } 
+    deleteContacts = (id) => {
+      swl({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this file!",
+        icon: "warning",
+        buttons: ["Cancel", "Delete"],
+        dangerMode: true,
+      }).then((willDelete) => {
+        if (willDelete) {
+          axios.delete(`http://localhost:4800/contacts/${id}`).then((res) => {
+            swl("Contact Deleted Succesfully.", {
+              icon: "success",
+            });
+            this.setState({
+              contacts: this.state.contacts.filter((el) => el._id !== id),
+            });
+          });
+        }
+      });
+    };
+  
+
+
+
     contactsList() {
         return this.state.contacts.map(currentcontacts => {
             return <Contacts contacts={currentcontacts} deleteContacts={this.deleteContacts} key={currentcontacts._id} />;
@@ -104,7 +131,7 @@ export default class ViewContacts extends Component {
                 <div className="row">
             <div className="col-2 buttons">
               <Link to="/create-contacts" type="button" className="btn btn-primary">
-                <i className="far fa-edit"></i> &nbsp;&nbsp;Add Contact
+                <i className="far fa-plus-square"></i> &nbsp;&nbsp;Add Contact
               </Link>
               <br />
             </div>
@@ -112,8 +139,8 @@ export default class ViewContacts extends Component {
               <Link
                 onClick={() => this.exportPDF()}
                 className="btn btn-warning"
-              >
-                &nbsp;&nbsp;Genarate Report
+              ><FaIcons.FaFilePdf /> 
+              &nbsp;&nbsp;Genarate Report
               </Link>
               <br />
               <br />
@@ -124,8 +151,9 @@ export default class ViewContacts extends Component {
                   to="/searchContact"
                   type="button"
                   className="btn btn-success"
-                >
-                  Search Contact Details
+                ><FaIcons.FaSearch /> 
+                &nbsp;&nbsp;
+                  Search Details
                 </Link>
                 <br />
               </div>
@@ -133,7 +161,7 @@ export default class ViewContacts extends Component {
           </div>
           <br />
                     
-                    <table className="table">
+                    <table  style={{ marginLeft: "-55px", width: "110%" }} className="table">
                         <thead className="thead-light">
                         <tr>
                         <th>National Advertising Team Email</th> 
@@ -144,7 +172,7 @@ export default class ViewContacts extends Component {
                         <th>Rath Vahana.lk Offices Team Number</th>
                         <th>Billing Department Email</th> 
                         <th>Billing Department Number</th> 
-                        <th>Actions</th>
+                        <th style={{ width: "160px" }}>Actions</th>
                         </tr>
                         </thead>
                         <tbody>

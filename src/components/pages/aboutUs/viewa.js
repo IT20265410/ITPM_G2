@@ -4,6 +4,7 @@ import axios from 'axios';
 //import './register.css';
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
+import * as FaIcons from 'react-icons/fa';
 
 const AboutUs = props => (
     <tr>
@@ -15,7 +16,10 @@ const AboutUs = props => (
       
 
         <td>
-            <Link to={"/edita/" + props.aboutUs._id}>edit</Link> 
+        <Link to={"/edita/" + props.aboutUs._id } type="button" className="btn btn-secondary">
+                <i className="far fa-edit"></i> &nbsp;&nbsp;Edit
+              </Link>
+              <br />
         </td>
     </tr>
 )
@@ -107,13 +111,14 @@ export default class Viewa extends Component {
                        
                         <div className='col-2 buttons'>
                             <Link to="/aboutUs" type="button" className="btn btn-primary">
-                             ADD 
+                            <i className="far fa-plus-square"></i> &nbsp;&nbsp;ADD 
                             </Link>
                             
                         </div>
 
                         <div className="col-7 buttons">
                             <Link onClick={() => this.exportPDF()} className="btn btn-warning">
+                            <FaIcons.FaFilePdf /> 
               &nbsp;&nbsp;Genarate Report
             </Link>
             <br />
@@ -134,7 +139,7 @@ export default class Viewa extends Component {
                             <th className="viewlist">Vission<br/><br/></th>
                             <th className="viewlist">Mission<br/><br/></th>
                             <th className="viewlist">Latest News<br/><br/></th>
-                            <th className="viewlist">Action<br/><br/></th>
+                            <th style={{ width: "120px" }} className="viewlist">Action<br/><br/></th>
                          
                       
 
