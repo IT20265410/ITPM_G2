@@ -1,21 +1,22 @@
 import React, { Component, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import "./pharmacy.css";
+import "./customer.css";
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
 import * as FaIcons from 'react-icons/fa';
 
-const Madicines = props => (
+const Customers = props => (
     <tr>
-        <td>{props.madicines.cname}</td>
-    <td>{props.madicines.cemail}</td>
-    <td>{props.madicines.caddress}</td>
-    <td>{props.madicines.nic.substring(0,12)}</td>
-    <td>{props.madicines.gender}</td>
-    <td>{props.madicines.mobileno.substring(0,15)}</td>
+        <td>{props.customers.cname}</td>
+    <td>{props.customers.cemail}</td>
+    <td>{props.customers.caddress}</td>
+    <td>{props.customers.nic.substring(0,12)}</td>
+    <td>{props.customers.gender}</td>
+    <td>{props.customers.mobileno.substring(0,15)}</td>
 
         <td>
+
         <Link to={"/editcustomer/" + props.madicines._id } type="button" className="btn btn-secondary">
                 <i className="far fa-edit"></i> &nbsp;&nbsp;Edit
               </Link>
@@ -26,18 +27,21 @@ const Madicines = props => (
             style={{ position: 'relative', top: "-38px", left: "110px"}}
 >
             <FaIcons.FaTrash /> &nbsp;&nbsp;Delete</button>
+
+            <Link to={"/editcustomer/" + props.customers._id}>edit</Link> | <a href="customer-list" onClick={() => { props.deleteCustomers(props.customers._id) }}>delete</a>
+
         </td>
     </tr>
 )
 
 
-export default class ViewMadicines extends Component {
+export default class ViewCustomers extends Component {
     constructor(props) {
         super(props);
 
-        this.deleteMadicines = this.deleteMadicines.bind(this);
+        this.deleteCustomers = this.deleteCustomers.bind(this);
 
-        this.state = { madicines: [] };
+        this.state = { customers: [] };
     }
 
     exportPDF = () => {
@@ -61,7 +65,7 @@ export default class ViewMadicines extends Component {
           ],
         ];
     
-        const madicines = this.state.madicines.map((elt) => [
+        const customers = this.state.customers.map((elt) => [
           elt._id,
           elt.cname,
           elt.cemail,
@@ -74,7 +78,7 @@ export default class ViewMadicines extends Component {
         let content = {
           startY: 50,
           head: headers,
-          body: madicines,
+          body: customers,
         };
     
         doc.text(title, marginLeft, 40);
@@ -84,28 +88,28 @@ export default class ViewMadicines extends Component {
 
 
     componentDidMount() {
-        axios.get('http://localhost:4800/madicines/')
+        axios.get('http://localhost:4800/customers/')
             .then(response => {
-                this.setState({ madicines: response.data })
+                this.setState({ customers: response.data })
             })
             .catch((error) => {
                 console.log(error);
             })
     }
 
-    deleteMadicines(id) {
-        axios.delete('http://localhost:4800/madicines/' + id)
+    deleteCustomers(id) {
+        axios.delete('http://localhost:4800/customers/' + id)
             .then(res => console.log(res.data));
 
         this.setState({
-            madicines: this.state.madicines.filter(sml => sml._id !== id)
+            customers: this.state.customers.filter(sml => sml._id !== id)
         })
         alert("Delete Customer Details?")
     }
 
-    madicinesList() {
-        return this.state.madicines.map(currentmadicines => {
-            return <Madicines madicines={currentmadicines} deleteMadicines={this.deleteMadicines} key={currentmadicines._id} />;
+    customersList() {
+        return this.state.customers.map(currentcustomers => {
+            return <Customers customers={currentcustomers} deleteCustomers={this.deleteCustomers} key={currentcustomers._id} />;
         })
     }
 
@@ -113,12 +117,12 @@ export default class ViewMadicines extends Component {
 
     render() {
         return (
-            <div className='viewMedicinePage'>
+            <div className='viewCustomerPage'>
                 <br />
                 
-                <div className='container' id="viewMedicineForm">
+                <div className='container' id="viewCustomerForm">
 
-                <h3 className="viewMedicineTitle">CUSTOMERS LIST</h3>
+                <h3 className="viewCustomerTitle">CUSTOMERS LIST</h3>
                     <br />
 
                     <div className="row">
@@ -152,11 +156,7 @@ export default class ViewMadicines extends Component {
               </div>
             </div>
           </div>
-          <br />
-
-
-
-                    
+          <br /> 
                     <table className="table">
                         <thead className="thead-light">
                             <tr>
@@ -170,7 +170,7 @@ export default class ViewMadicines extends Component {
                             </tr>
                         </thead>
                         <tbody>
-                            {this.madicinesList()}
+                            {this.customersList()}
                         </tbody>
                     </table>
              

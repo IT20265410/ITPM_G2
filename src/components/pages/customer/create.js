@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import './pharmacy.css';
+import './customer.css';
 import swl from "sweetalert";
 
 export default class AddMadicine extends Component {
@@ -75,7 +75,7 @@ export default class AddMadicine extends Component {
 
     console.log(exercise);
 
-    axios.post('http://localhost:4800/madicines/add', exercise)
+    axios.post('http://localhost:4800/customers/add', exercise)
       .then(res => console.log(res.data));
 
       swl("Customer Added Succesfully.", {
@@ -87,10 +87,10 @@ export default class AddMadicine extends Component {
 
   render() {
     return (
-      <div className='addMedicinePage'>
+      <div className='addCustomerPage'>
         <br />
-        <div className='container' id="addMedicineForm">
-          <h3 className="addMedicineTitle">Add New Customer</h3>
+        <div className='container' id="addCustomerForm">
+          <h3 className="addCustomerTitle">Add New Customer</h3>
           <br />
           <form onSubmit={this.onSubmit}>
           <div className="form-group"> 

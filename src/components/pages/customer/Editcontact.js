@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import './pharmacy.css';
-export default class EditPatient extends Component {
+import './customer.css';
+export default class EditCus extends Component {
   constructor(props) {
     super(props);
 
@@ -115,9 +115,9 @@ export default class EditPatient extends Component {
 
   render() {
     return (
-      <div className='editMedicinePage'>
+      <div className='editCustomerPage'>
         <br />
-        <div className='container' id="editMedicineForm">
+        <div className='container' id="editCustomerForm">
           <h3 className="addStaffTitle">EDIT CONTACT DETAILS</h3>
           <br/>
           <form onSubmit={this.onSubmit}> 

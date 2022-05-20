@@ -60,7 +60,8 @@ import Viewcm from "./components/pages/aboutUs_cs/viewcm";
 //Naveen
 import AddMadicine from "./components/pages/customer/create";
 import ViewMadicines from "./components/pages/customer/customer-list";
-import Editcustomer from "./components/pages/customer/editcustomer";
+
+import Editcustomer from "./components/pages/customer/Editcustomer";
 import SearchCustomer from './components/pages/customer/searchCustomer';
 import AddContacts from './components/pages/customer/create-contacts';  
 import ViewContact from './components/pages/customer/contact-list';
@@ -132,6 +133,7 @@ function App() {
        <Route path="/viewa" component={Viewa} />
        <Route path="/registerTeam" component={RegisterTeam} />
        <Route path="/viewm" component={Viewm} />
+
       
 
 
@@ -139,7 +141,14 @@ function App() {
 
        <Route path="/create" component={AddMadicine} />
        <Route path="/customer-list" component={ViewMadicines} />      
-       <Route path="/editcustomer/:id" component={Editcustomer} />
+       <Route path="/Editcustomer/:id" component={Editcustomer} />
+
+       <Route path="/viewcm" component={Viewcm} />
+  
+       <Route path="/create" component={AddMadicine} />
+       <Route path="/customer-list" component={ViewMadicines} />      
+       
+
        <Route path='/searchCustomer' component={SearchCustomer} />
        <Route path="/create-contacts" component={AddContacts} />
        <Route path='/contact-list' component={ViewContact} /> 
@@ -150,8 +159,8 @@ function App() {
                </div>
          </Switch>
         </Router>
-    //   </div>
-    // </>
+     </div>
+     </>
   );
 }
 

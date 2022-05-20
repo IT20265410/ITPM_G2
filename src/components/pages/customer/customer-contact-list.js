@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import "./pharmacy.css"; 
+import "./customer.css"; 
 
 const Contacts = props => (
     <tr>
@@ -47,13 +47,13 @@ export default class ViewContacts extends Component {
     } 
     render() {
         return (
-            <div className='viewMedicinePage'>
+            <div className='viewCustomersPage'>
                 <br /> 
-                <div className='container' id="viewMedicineForm"> 
+                <div className='container' id="viewCustomerForm"> 
                          
                         <br/> 
                          
-                    <h3 className="viewMedicineTitle">CONTACTS LIST</h3>
+                    <h3 className="viewCustomerTitle">CONTACTS LIST</h3>
                     <br />
                     <marquee>
                     <h3 style={{ color: "#8B0000" }}>

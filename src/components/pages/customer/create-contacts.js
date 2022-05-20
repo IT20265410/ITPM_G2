@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios'; 
-import './pharmacy.css';
+
+import './customer.css';
+
+import "react-datepicker/dist/react-datepicker.css";
+import './customer.css';
+
 import swl from "sweetalert";
 
 export default class AddContact extends Component {
@@ -98,10 +103,10 @@ export default class AddContact extends Component {
 
   render() {
     return (
-      <div className='addMedicinePage'>
+      <div className='addCustomerPage'>
         <br />
-        <div className='container' id="addMedicineForm">
-          <h3 className="addMedicineTitle">Add New Contact</h3>
+        <div className='container' id="addCustomerForm">
+          <h3 className="addCustomerTitle">Add New Contact</h3>
           <br />
           <form onSubmit={this.onSubmit}> 
           <div className="form-group"> 

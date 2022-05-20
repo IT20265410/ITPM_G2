@@ -1,31 +1,31 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import './pharmacy.css';
+import './customer.css';
 
 function SearchBar() {
     const [search, setSearch] = useState('');
-    const [madicines, setMadicines] = useState([]);
+    const [customers, setCustomers] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:4800/madicines/')
+        axios.get('http://localhost:4800/customers/')
             .then((response) => {
-                setMadicines(response.data);
+                setCustomers(response.data);
             })
     }, [])
 
     useEffect(() => {
         setFilteredData(
-            madicines.filter((madicines) => madicines.cname.toLowerCase().includes(search.toLowerCase()))||
-            madicines.filter((madicines) => madicines.id.toLowerCase().includes(search.toLowerCase()))
+            customers.filter((customers) => customers.cname.toLowerCase().includes(search.toLowerCase()))||
+            customers.filter((customers) => customers.id.toLowerCase().includes(search.toLowerCase()))
         )
-    }, [search], madicines)
+    }, [search], customers)
 
     return (
-        <div className="searchMadicinePage">
+        <div className="searchCustomerPage">
             <br />
-            <div className='container' id="searchMadicinForm">
-                <h2 className="searchMadicinTitle">SEARCH CUSTOMER DETAILS</h2>
+            <div className='container' id="searchCustomerForm">
+                <h2 className="searchCustomerTitle">SEARCH CUSTOMER DETAILS</h2>
                 <br />
                 <h5 >Enter Customer Name To View Customer Name And Details </h5>
                 <br />
@@ -33,7 +33,7 @@ function SearchBar() {
                     setSearch(e.target.value); 
                 }} />
                 <br /><br />
-                <table className="table">
+                <table id="offerTable">
                     <thead className="thead-light">
                         <tr>
                             <th>Customer Details</th>

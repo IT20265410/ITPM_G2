@@ -1,8 +1,9 @@
 import React, { Component, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import "./pharmacy.css";
 import swl from "sweetalert";
+
+import "./customer.css";
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
 import * as FaIcons from 'react-icons/fa';
@@ -123,11 +124,11 @@ export default class ViewContacts extends Component {
     } 
     render() {
         return (
-            <div className='viewMedicinePage'>
+            <div className='viewCustomerPage'>
                 <br /> 
-                <h3 className="viewMedicineTitle">CONTACTS LIST</h3>
+                <h3 className="viewCustomerTitle">CONTACTS LIST</h3>
                     <br />
-                <div className='container' id="viewMedicineForm"> 
+                <div className='container' id="viewCustomerForm"> 
                 <div className="row">
             <div className="col-2 buttons">
               <Link to="/create-contacts" type="button" className="btn btn-primary">
