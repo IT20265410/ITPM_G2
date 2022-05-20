@@ -29,10 +29,11 @@ const Login = ({ login, isAuthenticated }) => {
     }
 
     return (
+        <div className='LoginPage'>
         <div className="login-form">
             <h1 className="heading">Sign In</h1>
             <p className="lead">
-                <i className="fas fa-user"></i> Sign Into Your Account
+                <i className="fas fa-user"></i> Sign Into Admin Account
             </p>
             <Alert />
             <br />
@@ -63,7 +64,7 @@ const Login = ({ login, isAuthenticated }) => {
             <p className="link">
                 Don't have an account? <Link to="/register">Sign Up</Link>
             </p>
-        </div>
+        </div></div>
     );
 };
 

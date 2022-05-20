@@ -60,7 +60,7 @@ import Viewcm from "./components/pages/aboutUs_cs/viewcm";
 //Naveen
 import AddMadicine from "./components/pages/customer/create";
 import ViewMadicines from "./components/pages/customer/customer-list";
-import EditMadicine from "./components/pages/customer/editcustomer";
+import Editcustomer from "./components/pages/customer/editcustomer";
 import SearchCustomer from './components/pages/customer/searchCustomer';
 import AddContacts from './components/pages/customer/create-contacts';  
 import ViewContact from './components/pages/customer/contact-list';
@@ -93,6 +93,7 @@ function App() {
             <Route path="/customerFaq" component={CustomerFaq} />
             <Route path="/viewc" component={Viewc} />
             <Route path='/customer-contact-list' component={ViewCustomerContact} />  
+            <Route path="/viewcm" component={Viewcm} />
             <Route path="/dashboard" component={Dashboard} />
             <div>
               <Navbar />
@@ -131,18 +132,18 @@ function App() {
        <Route path="/viewa" component={Viewa} />
        <Route path="/registerTeam" component={RegisterTeam} />
        <Route path="/viewm" component={Viewm} />
-       <Route path="/viewcm" component={Viewcm} />
+      
 
 
 
 
        <Route path="/create" component={AddMadicine} />
        <Route path="/customer-list" component={ViewMadicines} />      
-       <Route path="/editcustomer/:id" component={EditMadicine} />
+       <Route path="/editcustomer/:id" component={Editcustomer} />
        <Route path='/searchCustomer' component={SearchCustomer} />
        <Route path="/create-contacts" component={AddContacts} />
        <Route path='/contact-list' component={ViewContact} /> 
-       <Route path="/Editcontact" component={EditContact} /> 
+       <Route path="/Editcontact/:id" component={EditContact} /> 
        <Route path='/searchContact' component={SearchContact} /> 
        
 
