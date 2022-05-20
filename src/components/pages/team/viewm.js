@@ -5,6 +5,7 @@ import swl from "sweetalert";
 //import './register.css';
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
+import * as FaIcons from 'react-icons/fa';
 
 const Team = props => (
     <tr>
@@ -18,7 +19,16 @@ const Team = props => (
         <td>{props.team.phone}</td>
 
         <td>
-            <Link to={"/editm/" + props.team._id}>edit</Link> | <a href="#" onClick={() => { props.deleteTeam(props.team._id) }}>delete</a>
+        <Link to={"/editm/" + props.team._id} type="button" className="btn btn-secondary">
+                <i className="far fa-edit"></i> &nbsp;&nbsp;Edit
+              </Link>
+              <br />
+          
+            
+            <button onClick={() => { props.deleteTeam(props.team._id) }} className="btn btn-danger"
+            style={{ position: 'relative', top: "8px"}}
+>
+            <FaIcons.FaTrash /> &nbsp;&nbsp;Delete</button>
         </td>
     </tr>
 )
@@ -129,6 +139,7 @@ export default class Viewm extends Component {
                        
                         <div className='col-2 buttons'>
                             <Link to="/registerTeam" type="button" className="btn btn-primary">
+                            <i className="far fa-plus-square"></i> &nbsp;&nbsp;
                              ADD 
                             </Link>
                             
@@ -136,6 +147,7 @@ export default class Viewm extends Component {
 
                         <div className="col-7 buttons">
                             <Link onClick={() => this.exportPDF()} className="btn btn-warning">
+                            <FaIcons.FaFilePdf />    
               &nbsp;&nbsp;Genarate Report
             </Link>
             <br />
@@ -145,6 +157,8 @@ export default class Viewm extends Component {
                         
                          <div className='col-3 buttons'>
                             <Link to="/searchteam" type="button" className="btn btn-secondary">
+                            <FaIcons.FaSearch /> 
+                            &nbsp;&nbsp;
                             Search Member
                             </Link>
                             
@@ -160,11 +174,11 @@ export default class Viewm extends Component {
                             <th className="viewlist">Name</th>
                             <th className="viewlist">Age</th>
                             <th className="viewlist">Email</th>
-                            <th className="viewlist">Description</th>
+                            <th style={{ width: "330px" }}className="viewlist">Description</th>
                             <th className="viewlist">Special Position</th>
                             <th className="viewlist">NIC</th>
                             <th className="viewlist">Phone</th>
-                            <th className="viewlist">action</th>
+                            <th style={{ width: "330px" }} className="viewlist">action</th>
 
                         </tr>
                     </thead>

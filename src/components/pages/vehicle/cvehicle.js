@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { jsPDF } from "jspdf";
-import "jspdf-autotable";
+import * as FaIcons from 'react-icons/fa';
 
 import '../vehicle.css';
 
@@ -30,46 +29,7 @@ export default class Viewvehicle extends Component {
         this.state = { addvehicle: [] };
     }
 
-    exportPDF = () => {
-        const unit = "pt";
-        const size = "A4"; // Use A1, A2, A3 or A4
     
-        const marginLeft = 40;
-        const doc = new jsPDF("landscape", unit, size);
-    
-        doc.setFontSize(15);
-    
-        const title = "Vehicle Details";
-        const headers = [
-          [
-            
-            "Vehicle Model",
-          
-            "Rent Price",
-            "Description",
-          ],
-        ];
-    
-        const addvehicle = this.state.addvehicle.map((elt) => [
-         
-          elt.name,
-         
-          elt.price,
-          elt.description,
-          
-        ]);
-    
-        let content = {
-          startY: 50,
-          head: headers,
-          body: addvehicle,
-        };
-    
-        doc.text(title, marginLeft, 40);
-        doc.autoTable(content);
-        doc.save("vehicle.pdf");
-      };
-
 
 
     componentDidMount() {
@@ -100,13 +60,15 @@ export default class Viewvehicle extends Component {
                     <center><h2 id="addrent1Title">Rent On Vehicles</h2></center>
                    
                     <marquee>
-              <h3 style={{ color: "red" }}>
+              <h3 style={{ color: "#FFA07A" }}>
                 <i>Car rental service with smiling prices..!</i>
               </h3>
             </marquee> <br />
                         <div className='row'>
                         <div className='col-3 buttons'>
                             <Link to="/searchvehicle" type="button" className="btn btn-secondary">
+                            <FaIcons.FaSearch /> 
+                             &nbsp;&nbsp;
                                 Search Vehicle Details
                             </Link>
                             <br />
@@ -117,14 +79,6 @@ export default class Viewvehicle extends Component {
 
                         <br/>
 
-
-                        <div className="col-3 buttons2">
-            <Link onClick={() => this.exportPDF()} className="btn btn-warning">
-              &nbsp;&nbsp;Download Vehicle List
-            </Link>
-            <br />
-            <br />
-          </div>
 
                         
                         <table id="carTable">

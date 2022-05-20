@@ -4,6 +4,7 @@ import axios from 'axios';
 import swl from "sweetalert";
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
+import * as FaIcons from 'react-icons/fa';
 
 //import './register.css';
 
@@ -16,9 +17,19 @@ const Addvehicle = props => (
         <td>{props.addvehicle.description}</td>
 
 
+       
         <td>
-            <Link to={"/editvehicle/" + props.addvehicle._id}>edit</Link> | <a href="#" onClick={() => { props.deleteAddvehicle(props.addvehicle._id) }}>delete</a>
-        </td>
+              <Link to={"/editvehicle/" + props.addvehicle._id } type="button" className="btn btn-secondary">
+                <i className="far fa-edit"></i> &nbsp;&nbsp;Edit
+              </Link>
+              <br />
+          
+            
+            <button onClick={() => { props.deleteAddvehicle(props.addvehicle._id) }} className="btn btn-danger"
+            style={{ position: 'relative', top: "-38px", left: "110px"}}
+>
+            <FaIcons.FaTrash /> &nbsp;&nbsp;Delete</button></td>
+            
     </tr>
 )
 
@@ -124,7 +135,7 @@ export default class Viewvehicle extends Component {
                     <div className="row">
             <div className="col-2 buttons">
               <Link to="/addvehicle" type="button" className="btn btn-primary">
-                <i className="far fa-edit"></i> &nbsp;&nbsp;Add Vehicle
+                <i className="far fa-plus-square"></i> &nbsp;&nbsp;Add Vehicle
               </Link>
               <br />
             </div>
@@ -132,7 +143,7 @@ export default class Viewvehicle extends Component {
               <Link
                 onClick={() => this.exportPDF()}
                 className="btn btn-warning"
-              >
+              ><FaIcons.FaFilePdf /> 
                 &nbsp;&nbsp;Genarate Report
               </Link>
               <br />
@@ -144,8 +155,9 @@ export default class Viewvehicle extends Component {
                   to="/searchvehicle"
                   type="button"
                   className="btn btn-success"
-                >
-                  Search Vehicle Details
+                ><FaIcons.FaSearch /> 
+                &nbsp;&nbsp;
+                  Search Details
                 </Link>
                 <br />
               </div>
@@ -160,7 +172,7 @@ export default class Viewvehicle extends Component {
                                     <th className="viewlist">Name</th>
                                     
                                     <th className="viewlist">Rent Price</th>
-                                    <th className="viewlist">Description</th>
+                                    <th style={{ width: "400px" }} className="viewlist">Description</th>
                                     <th className="viewlist"></th>
 
 

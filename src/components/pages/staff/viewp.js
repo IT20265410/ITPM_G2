@@ -4,6 +4,7 @@ import axios from 'axios';
 //import './register.css';
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
+import * as FaIcons from 'react-icons/fa';
 
 const Register = props => (
     <tr>
@@ -17,7 +18,16 @@ const Register = props => (
         <td>{props.register.phone}</td>
 
         <td>
-            <Link to={"/editp/" + props.register._id}>edit</Link> | <a href="#" onClick={() => { props.deleteRegister(props.register._id) }}>delete</a>
+        <Link to={"/editp/" + props.register._id } type="button" className="btn btn-secondary">
+                <i className="far fa-edit"></i> &nbsp;&nbsp;Edit
+              </Link>
+              <br />
+          
+            
+            <button onClick={() => { props.deleteRegister(props.register._id) }} className="btn btn-danger"
+            style={{ position: 'relative', top: "-38px", left: "110px"}}
+>
+            <FaIcons.FaTrash /> &nbsp;&nbsp;Delete</button>
         </td>
     </tr>
 )
@@ -109,6 +119,7 @@ export default class Viewp extends Component {
                        
                         <div className='col-2 buttons'>
                             <Link to="/registerVaccine" type="button" className="btn btn-primary">
+                            <i className="far fa-plus-square"></i> &nbsp;&nbsp;
                              ADD EMPLOYEE
                             </Link>
                             
@@ -116,7 +127,8 @@ export default class Viewp extends Component {
 
                         <div className="col-7 buttons">
                             <Link onClick={() => this.exportPDF()} className="btn btn-warning">
-              &nbsp;&nbsp;Genarate Report
+                            <FaIcons.FaFilePdf /> 
+                &nbsp;&nbsp;Genarate Report
             </Link>
             <br />
             <br />
@@ -124,7 +136,9 @@ export default class Viewp extends Component {
           </div>
                         
                          <div className='col-3 buttons'>
-                            <Link to="/searchStaff" type="button" className="btn btn-secondary">
+                            <Link to="/searchemployee" type="button" className="btn btn-secondary">
+                            <FaIcons.FaSearch /> 
+                            &nbsp;&nbsp;
                             Search Staff
                             </Link>
                             
@@ -144,7 +158,7 @@ export default class Viewp extends Component {
                             <th className="viewlist">Gender</th>
                             <th className="viewlist">NIC</th>
                             <th className="viewlist">Phone</th>
-                            <th className="viewlist">action</th>
+                            <th style={{ width: "250px" }} className="viewlist"></th>
 
                         </tr>
                     </thead>

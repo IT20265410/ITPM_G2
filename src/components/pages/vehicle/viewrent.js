@@ -4,7 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 import swl from "sweetalert";
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
-
+import * as FaIcons from 'react-icons/fa';
 import '../vehicle.css';
 
 const Rentv = props => (
@@ -17,7 +17,16 @@ const Rentv = props => (
         <td>{props.rentv.status}</td>
 
         <td>
-            <Link to={"/editrent/" + props.rentv._id}>edit</Link> | <a href="#" onClick={() => { props.deleteRentv(props.rentv._id) }}>delete</a>
+            <Link to={"/editrent/" + props.rentv._id } type="button" className="btn btn-secondary">
+                <i className="far fa-edit"></i> &nbsp;&nbsp;Edit
+              </Link>
+              <br />
+          
+            
+            <button onClick={() => { props.deleteRentv(props.rentv._id) }} className="btn btn-danger"
+            style={{ position: 'relative', top: "-38px", left: "110px"}}
+>
+            <FaIcons.FaTrash /> &nbsp;&nbsp;Delete</button>
         </td>
     </tr>
 
@@ -130,7 +139,7 @@ export default class Viewrent extends Component {
                         <div className="row">
             <div className="col-2 buttons">
               <Link to="/rentv" type="button" className="btn btn-primary">
-                <i className="far fa-edit"></i> &nbsp;&nbsp;Add Rent Details
+                <i className="far fa-plus-square"></i> &nbsp;&nbsp;Add Rent Details
               </Link>
               <br />
             </div>
@@ -138,7 +147,7 @@ export default class Viewrent extends Component {
               <Link
                 onClick={() => this.exportPDF()}
                 className="btn btn-warning"
-              >
+              ><FaIcons.FaFilePdf /> 
                 &nbsp;&nbsp;Genarate Report
               </Link>
               <br />
@@ -150,8 +159,9 @@ export default class Viewrent extends Component {
                   to="/searchrent"
                   type="button"
                   className="btn btn-success"
-                >
-                  Search Vehicle Details
+                ><FaIcons.FaSearch /> 
+                &nbsp;&nbsp;
+                  Search Details
                 </Link>
                 <br />
               </div>

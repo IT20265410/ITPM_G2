@@ -28,13 +28,13 @@ function SearchBar() {
             <div className='container' id="searchVehicleForm">
                 <h3 className="searchRegisterVaccineTitle">SEARCH VEHICLES' DETAILS</h3>
                 <br /><br />
-                <h5>Enter vehicle ID to view name </h5>
+                <h5>Enter Vehicle Name to Find Vehicles </h5>
                 <br />
                 <input className="searchBar" type="text" placeholder="Search..." onChange={(e) => {
                     setSearch(e.target.value);
                 }} />
                 <br /><br />
-                <table className="table">
+                <table id="offerTable">
                     <thead className="thead-light">
                         <tr>
                             <th>Vehicle Details</th>
