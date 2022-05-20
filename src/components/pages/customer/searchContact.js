@@ -24,10 +24,10 @@ function SearchBar() {
     }, [search], contacts)
 
     return (
-        <div className="searchMadicinePage">
+        <div className="searchCustomerPage">
             <br />
-            <div className='container' id="searchMadicinForm">
-                <h3 className="searchMadicinTitle">SEARCH CONTACT DETAILS</h3>
+            <div className='container' id="searchCustomerForm">
+                <h3 className="searchCustomerTitle">SEARCH CONTACT DETAILS</h3>
                 <h5>Enter Contact Number or Email To View Contact Email And Contact Number </h5>
                 <br />
                 <input className="searchBar" type="text" placeholder="Search..." onChange={(e) => {
