@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import '../vehicle.css';
 
-
 export default class AboutUs extends Component {
     constructor(props) {
         super(props);
@@ -48,7 +47,6 @@ export default class AboutUs extends Component {
     }
 
   
-
     onChangeLnews(e) {
         this.setState({
             lNews: e.target.value
@@ -78,7 +76,6 @@ export default class AboutUs extends Component {
     displayAboutus = value => () => {
         console.log(value);
     };
-
 
     render() {
 

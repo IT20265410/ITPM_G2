@@ -19,9 +19,7 @@ export default class Edita extends Component {
             vision: '',
             mission: '',
             lNews: ''
-
         }
-
     }
 
     componentDidMount() {
@@ -63,13 +61,11 @@ export default class Edita extends Component {
         });
     }
 
-
     onChangeLnews(e) {
         this.setState({
             lNews: e.target.value
         });
     }
-
 
     onSubmit(e) {
 
