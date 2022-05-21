@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-//import './register.css';
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
 import * as FaIcons from 'react-icons/fa';
@@ -23,7 +22,6 @@ const Register = props => (
                 <i className="far fa-edit"></i> &nbsp;&nbsp;Edit
               </Link>
               <br />
-          
             
             <button onClick={() => { props.deleteRegister(props.register._id) }} className="btn btn-danger"
             style={{ position: 'relative', top: "-38px", left: "110px"}}
