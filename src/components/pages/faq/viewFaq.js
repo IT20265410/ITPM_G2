@@ -20,7 +20,7 @@ const Faq = (props) => (
           
             
             <button onClick={() => { props.deleteFaq(props.faq._id) }} className="btn btn-danger"
-            style={{ position: 'relative', top: "-38px", left: "110px"}}
+            style={{ position: 'relative', top: "-38px", left: "90px"}}
 >
             <FaIcons.FaTrash /> &nbsp;&nbsp;Delete</button>
     </td>
@@ -125,8 +125,9 @@ export default class ViewFaq extends Component {
               <Link
                 onClick={() => this.exportPDF()}
                 className="btn btn-warning"
-              ><FaIcons.FaFilePdf /> 
-              &nbsp;&nbsp;Download FAQs'
+              >
+                <FaIcons.FaFilePdf />
+                &nbsp;&nbsp;Download FAQ List
               </Link>
               <br />
               <br />
@@ -134,9 +135,8 @@ export default class ViewFaq extends Component {
             <div className="col-6 buttons2">
               <div className="col-4 buttons" style={{ marginLeft: "450px" }}>
                 <Link to="/searchFaq" type="button" className="btn btn-success">
-                <FaIcons.FaSearch /> 
-                &nbsp;&nbsp;
-                  Search FAQ details
+                  <FaIcons.FaSearch />
+                  &nbsp;&nbsp; Search FAQ
                 </Link>
                 <br />
               </div>
@@ -144,14 +144,17 @@ export default class ViewFaq extends Component {
           </div>
           <br />
 
-          <table className="table">
+          <table
+            className="table"
+            style={{ marginLeft: "-50px", width: "110%" }}
+          >
             <thead className="thead-light">
               <tr>
                 <th>Question ID</th>
                 <th>Question</th>
                 <th>Answer</th>
-                <th style={{ width: "120px" }}>Added Date</th>
-                <th style={{ width: "250px" }}>Action</th>
+                <th style={{ width: "135px" }}>Added Date</th>
+                <th style={{ width: "230px" }}>Action</th>
               </tr>
             </thead>
             <tbody>{this.faqList()}</tbody>
