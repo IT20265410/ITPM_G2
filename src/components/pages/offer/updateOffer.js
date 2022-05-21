@@ -46,16 +46,6 @@ export default class UpdateOffer extends Component {
       .catch(function (error) {
         console.log(error);
       });
-
-    // axios
-    //   .get("http://localhost:4800/offers/")
-    //   .then((response) => {
-    //     if (response.data.length > 0) {
-    //       this.setState({
-    //         offers: response.data.map((offer) => offer.offerId),
-    //       })
-    //     }
-    //   })
   }
 
   onChangeOfferId(e) {
@@ -127,10 +117,6 @@ export default class UpdateOffer extends Component {
     window.location = "/viewOffer";
   }
 
-  // displayOffer = (value) => () => {
-  //   console.log(value);
-  // };
-
   render() {
     return (
       <div className="addvehiclePage">
@@ -181,7 +167,7 @@ export default class UpdateOffer extends Component {
                 className="form-control"
                 value={this.state.offerDescription}
                 onChange={this.onChangeOfferDescription}
-                pattern="[A-Za-z0-9' '%.]{10,}"
+                pattern="[A-Za-z0-9' '%.?@#]{10,}"
                 title="Minimum characters length must be 10"
                 placeholder="Eg: Shop with us and get up to 25% in this mid year. Click on the 'Contact Us' for more details. "
               />
@@ -194,7 +180,7 @@ export default class UpdateOffer extends Component {
                 className="form-control"
                 value={this.state.specialNotice}
                 onChange={this.onChangeSpecialNotice}
-                pattern="[A-Za-z0-9' '%.]{10,}"
+                pattern="[A-Za-z0-9' '%.?@#]{10,}"
                 title="Minimum characters length must be 10"
                 placeholder="Eg: Be the among first 10 callers and get 5% off"
               />

@@ -16,16 +16,26 @@ const Offer = (props) => (
     <td>{props.offer.startingDate.substring(0, 10)}</td>
     <td>{props.offer.endingDate.substring(0, 10)}</td>
     <td>
-    <Link to={"/updateOffer/" + props.offer._id } type="button" className="btn btn-secondary">
-                <i className="far fa-edit"></i> &nbsp;&nbsp;Edit
-              </Link>
-              <br />
-          
-            
-            <button onClick={() => { props.deleteOffer(props.offer._id) }} className="btn btn-danger"
-            style={{ position: 'relative', top: "-38px", left: "110px"}}
->
-            <FaIcons.FaTrash /> &nbsp;&nbsp;Delete</button>
+      <center>
+        <Link
+          to={"/updateOffer/" + props.offer._id}
+          type="button"
+          className="btn btn-secondary"
+        >
+          <i className="far fa-edit"></i> &nbsp;&nbsp;Edit
+        </Link>
+        <br />
+
+        <button
+          onClick={() => {
+            props.deleteOffer(props.offer._id);
+          }}
+          className="btn btn-danger"
+          style={{ position: "relative", top:"2px" }}
+        >
+          <FaIcons.FaTrash /> &nbsp;&nbsp;Delete
+        </button>
+      </center>
     </td>
   </tr>
 );
@@ -145,8 +155,9 @@ export default class ViewOffer extends Component {
               <Link
                 onClick={() => this.exportPDF()}
                 className="btn btn-warning"
-              ><FaIcons.FaFilePdf /> 
-              &nbsp;&nbsp;Genarate Report
+              >
+                <FaIcons.FaFilePdf />
+                &nbsp;&nbsp;Genarate Report
               </Link>
               <br />
               <br />
@@ -157,9 +168,9 @@ export default class ViewOffer extends Component {
                   to="/searchOffer"
                   type="button"
                   className="btn btn-success"
-                ><FaIcons.FaSearch /> 
-                &nbsp;&nbsp;
-                  Search Offer details
+                >
+                  <FaIcons.FaSearch />
+                  &nbsp;&nbsp; Search an Offer
                 </Link>
                 <br />
               </div>
@@ -169,18 +180,18 @@ export default class ViewOffer extends Component {
 
           <table
             className="table"
-            style={{ marginLeft: "-55px", width: "110%" }}
+            style={{ marginLeft: "-80px", width: "116%" }}
           >
             <thead className="thead-light">
               <tr>
-                <th>Offer ID</th>
-                <th style={{ width: "160px" }}>Offer Name</th>
-                <th>Offer Code</th>
-                <th style={{ width: "290px" }}>Offer Description</th>
+                <th style={{ width: "90px" }}>Offer ID</th>
+                <th style={{ width: "120px" }}>Offer Name</th>
+                <th style={{ width: "130px" }}>Offer Code</th>
+                <th style={{ width: "280px" }}>Offer Description</th>
                 <th style={{ width: "240px" }}>Special Notice</th>
-                <th>Starting Date</th>
-                <th>Ending Date</th>
-                <th style={{ width: "250px" }}>Action</th>
+                <th style={{ width: "140px" }}>Starting Date</th>
+                <th style={{ width: "140px" }}>Ending Date</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>{this.offerList()}</tbody>

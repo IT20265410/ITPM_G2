@@ -104,7 +104,7 @@ export default class CreateFaq extends Component {
                 value={this.state.question}
                 onChange={this.onChangeQuestion}
                 placeholder="Eg: What is the contact number?"
-                pattern="[A-Za-z0-9' '?%.@#]{10,}"
+                pattern="[A-Za-z0-9' '?%.@#,]{10,}"
                 title="Minimum characters length must be 10"
               />
             </div>
@@ -117,7 +117,7 @@ export default class CreateFaq extends Component {
                 value={this.state.answer}
                 onChange={this.onChangeAnswer}
                 placeholder="Eg: You can check the contact us details page"
-                pattern="[A-Za-z0-9' '?%.@#]{8,}"
+                pattern="[A-Za-z0-9' '?%.@#,]{8,}"
                 title="Minimum characters length must be 8"
               />
             </div>

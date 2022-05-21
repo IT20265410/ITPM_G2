@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import "../vehicle.css";
+import * as FaIcons from "react-icons/fa";
 
 function SearchBarFaq() {
   const [search, setSearch] = useState("");
@@ -32,8 +34,17 @@ function SearchBarFaq() {
     <div className="addvehiclePage">
       <br />
       <div className="container" id="searchVehicleForm">
-        <h3 className="searchRegisterVaccineTitle">SEARCH FAQs' DETAILS</h3>
+        <h3 className="searchRegisterVaccineTitle">SEARCH FAQ DETAILS</h3>
         <br />
+        <div>
+          <div>
+            <Link to="/viewFaq" type="button" className="btn btn-primary">
+              <FaIcons.FaAngleLeft />
+              &nbsp;&nbsp; Back
+            </Link>
+            <br />
+          </div>
+        </div>
         <br />
         <h5>Enter question to view details </h5>
         <br />
@@ -47,7 +58,7 @@ function SearchBarFaq() {
         />
         <br />
         <br />
-        <table className="table">
+        <table id="offerTable" style={{ fontSize: "14pt" }}>
           <thead className="thead-light">
             <tr>
               <th>Freaquently Asked Questions Details</th>
