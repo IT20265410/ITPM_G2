@@ -5,6 +5,7 @@ import axios from 'axios';
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
 import * as FaIcons from 'react-icons/fa';
+import '../vehicle.css';
 
 const Register = props => (
     <tr>
@@ -112,15 +113,15 @@ export default class Viewp extends Component {
         return (
             <div className='addvehiclePage' id="viewTable">
                 <br />
-                <center><h3 className="addcovid1Title">Staff Member Details</h3></center>
+                <center><h3 className="add1Title">Staff Member Details</h3></center>
                 <div className='container' id="viewMedicineForm">
 
                 <div className='row'>
                        
                         <div className='col-2 buttons'>
-                            <Link to="/registerVaccine" type="button" className="btn btn-primary">
+                            <Link to="/registerEmployee" type="button" className="btn btn-primary">
                             <i className="far fa-plus-square"></i> &nbsp;&nbsp;
-                             ADD EMPLOYEE
+                             Add Employee
                             </Link>
                             
                         </div>

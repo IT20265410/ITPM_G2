@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-//import './registerVaccine.css';
+import '../vehicle.css';
 
-
-export default class RegisterVaccine extends Component {
+export default class RegisterEmployee extends Component {
     constructor(props) {
         super(props);
 
@@ -96,7 +95,7 @@ export default class RegisterVaccine extends Component {
     onSubmit(e) {
         e.preventDefault();
 
-        const registerVaccine = {
+        const registerEmployee = {
             _id: this.state._id,
             name: this.state.name,
             address: this.state.address,
@@ -109,9 +108,9 @@ export default class RegisterVaccine extends Component {
             password: this.state.password
         }
 
-        console.log(registerVaccine);
+        console.log(registerEmployee);
 
-        axios.post('http://localhost:4800/register/add', registerVaccine)
+        axios.post('http://localhost:4800/register/add', registerEmployee)
             .then(res => console.log(res.data));
 
         alert("Employee Added Succesfully!");
@@ -166,6 +165,7 @@ export default class RegisterVaccine extends Component {
                             <label className="textColour">Age: </label>
                             <input
                                 type="text"
+                                required
                                 className="form-control"
                                 value={this.state.age}
                                 onChange={this.onChangeAge}
@@ -185,6 +185,7 @@ export default class RegisterVaccine extends Component {
                             <label className="textColour">NIC: </label>
                             <input
                                 type="text"
+                                required
                                 className="form-control"
                                 maxLength="10"
                                 minLength="10"
@@ -197,6 +198,7 @@ export default class RegisterVaccine extends Component {
                             <label className="textColour">Employee Contact No: </label>
                             <input
                                 type="text"
+                                required
                                 maxLength="10"
                                 minLength="10"
                                 className="form-control"
@@ -209,6 +211,8 @@ export default class RegisterVaccine extends Component {
                             <label className="textColour">Email: </label>
                             <input
                                 type="email"
+                                pattern="[a-z0-9._%+-]+@[a-z0-9]+\.[a-z]{2,3}"
+                                required
                                 className="form-control"
                                 value={this.state.email}
                                 onChange={this.onChangeEmail}

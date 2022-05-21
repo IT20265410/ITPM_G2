@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-//import './registerVaccine.css';
 import '../vehicle.css';
 
 
@@ -115,7 +114,7 @@ export default class RegisterTeam extends Component {
         axios.post('http://localhost:4800/team/add', registerTeam)
             .then(res => console.log(res.data));
 
-        alert("team member Added Succesfully!");
+        alert("Team member Added Succesfully!");
         window.location = '/viewm';
     }
 
@@ -136,10 +135,11 @@ export default class RegisterTeam extends Component {
                             <label className="textColour">Membership ID: </label>
                             <input type="text"
                                 required
-                                pattern="[T,0-9]*"
+                                pattern="[T,0-9]{5,10}"
                                 className="form-control"
                                 value={this.state._id}
                                 onChange={this.onChangeID}
+                                title="Member id should be started with T"
                                 placeholder="eg: T001"
                             />
                         </div>
@@ -171,8 +171,8 @@ export default class RegisterTeam extends Component {
                             <select class="form-select" id="validationCustom04" required value={this.state.gender} onChange={this.onChangeGender}>
                                 <option selected disabled value="">Choose</option>
                                 <option>Team Leader</option>
-                                <option>Team  Secratary</option>
-                                <option>Team Assistant Secratary</option>
+                                <option>Team Secretary</option>
+                                <option>Team Assistant Secretary</option>
                                 <option>Team Cordinator</option>
                             </select></div>
 
@@ -194,19 +194,21 @@ export default class RegisterTeam extends Component {
                             <input
                                 type="text"
                                 required
+                                pattern="[0-9]*"
                                 maxLength="10"
                                 minLength="10"
                                 className="form-control"
                                 value={this.state.phone}
                                 onChange={this.onChangePhone}
+                                title="Minimum characters length must be 10"
                                 placeholder="eg: 0779937258"
                             />
                         </div>
                         <div className="form-group">
                             <label className="textColour">Email: </label>
-                            <input
-                                type="email"
+                            <input type="email"
                                 required
+                                pattern="[a-z0-9._%+-]+@[a-z0-9]+\.[a-z]{2,3}"
                                 className="form-control"
                                 value={this.state.email}
                                 onChange={this.onChangeEmail}
@@ -220,12 +222,13 @@ export default class RegisterTeam extends Component {
                                 className="form-control"
                                 value={this.state.address}
                                 onChange={this.onChangeAddress}
+                                title="Minimum characters length must be 10"
                                 placeholder="eg: He is the team leader...."
                             />
                         </div>
                         <br />
                         <div className="form-group">
-                            <input type="submit" value="ADD" className="btn btn-primary" />
+                            <input type="submit" value="Add Member" className="btn btn-primary" />
                         </div>
                     </form>
                 </div></div>

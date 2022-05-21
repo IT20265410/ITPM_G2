@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-//import './registerVaccine.css';
-import swl from "sweetalert";
+import '../vehicle.css';
+
 
 export default class AboutUs extends Component {
     constructor(props) {
@@ -71,9 +71,7 @@ export default class AboutUs extends Component {
         axios.post('http://localhost:4800/aboutUs/add', aboutUs)
             .then(res => console.log(res.data));
 
-            swl("aboutus details Added Succesfully.", {
-                icon: "success",
-            });
+            alert("About Us details Added Succesfully!");
         window.location = '/viewa';
     }
 
@@ -144,7 +142,7 @@ export default class AboutUs extends Component {
                         </div>
                         <br />
                         <div className="form-group">
-                            <input type="submit" value="ADD" className="btn btn-primary" />
+                            <input type="submit" value="Add Details" className="btn btn-primary" />
                         </div>
                     </form>
                 </div></div>

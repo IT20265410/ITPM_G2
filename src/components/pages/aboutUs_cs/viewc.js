@@ -8,14 +8,10 @@ import '../vehicle.css';
 
 const AboutUs = props => (
     <tr>
-       
         <td>{props.aboutUs.comDesc}</td>
         <td>{props.aboutUs.vision}</td>
         <td>{props.aboutUs.mission}</td>
-        <td>{props.aboutUs.lNews}</td>
-      
-
-       
+        <td>{props.aboutUs.lNews}</td> 
     </tr>
 )
 
@@ -95,58 +91,48 @@ export default class Viewc extends Component {
             return <AboutUs aboutUs={currentaboutUs} deleteAboutUs={this.delete} key={currentaboutUs._id} />;
         })
     }
-
-
+    
     render() {
         return (
             <div className='addAPage' id="viewTable">
                 <br />
-                <center><h1 className="addcovid1Title">About Rathavahana.lk</h1></center>
-                <div className='container' id="viewMedicineForm">
+                <center><h1 className="addvehicleTitle">About Rathavahana.lk</h1></center>
+                <div className='container' id="viewRegisterForm">
                 <br/>
-                <center><h3 className="addcovid1Title">**Find The Right Vehicle For You **</h3></center>
-
-                <div className='row'>
-                       
+                    <center>
+            <marquee>
+              <h3 style={{ color: "maroon" }}>
+                <i>**Find The Right Vehicle For You **</i>
+              </h3>
+            </marquee>
+          </center>
+          <br/>
+                <div className='row'>                
                 <br/>          
-                <br/>     
-                        
-                     
-                
+                <br/>        
           </div>
-
-
-                <table className="table" id="displayTable">
+          <table className="table" id="displayTable">
                     <thead className="thead-light">
-                     <tr id="tablist">
+                     <tr id="offerTable">
                         
                             <th className="viewlist">Company Descripton <br/><br/></th>
                             <th className="viewlist">Vission<br/><br/></th>
                             <th className="viewlist">Mission<br/><br/></th>
                             <th className="viewlist">Latest News<br/><br/></th>
-                           
-                         
                       
-
                         </tr>
                     </thead>
                     <tbody>
                         {this.aboutUsMembersList()}
                     </tbody>
                 </table>
-                
-                <div className='row'>
-                       
-                       <center> <div className='col-2 buttons'>
+               <div className='row'>
+                   <center> <div className='col-2 buttons'>
                                    <Link to="/viewcm" type="button" className="btn btn-primary">
                                     Learn More
                                    </Link>
-                                   
                                </div></center> </div>
-                        
                     </div></div>
-
-            
         )
     }
 }

@@ -1,24 +1,17 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-//import './registerVaccine.css';
-
-
-
+import '../vehicle.css';
 
 export default class Edita extends Component {
 
     constructor(props) {
         super(props);
 
-
         this.onChangeComDesc = this.onChangeComDesc.bind(this);
         this.onChangeVision = this.onChangeVision.bind(this);
         this.onChangeMission = this.onChangeMission.bind(this);
         this.onChangeLnews = this.onChangeLnews.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
-
-
-
 
         this.state = {
 
@@ -31,24 +24,16 @@ export default class Edita extends Component {
 
     }
 
-
-
     componentDidMount() {
 
         axios.get('http://localhost:4800/aboutUs/' + this.props.match.params.id)
 
             .then(response => {
-
                 this.setState({
-
                     comDesc: response.data.comDesc,
-
                     vision: response.data.vision,
-
                     mission: response.data.mission,
-
                     lNews: response.data.lNews
-
                 })
 
             })
@@ -59,12 +44,7 @@ export default class Edita extends Component {
 
             })
 
-
-
     }
-
-
-
     onChangeComDesc(e) {
         this.setState({
             comDesc: e.target.value
@@ -83,7 +63,6 @@ export default class Edita extends Component {
         });
     }
 
-  
 
     onChangeLnews(e) {
         this.setState({
@@ -92,12 +71,9 @@ export default class Edita extends Component {
     }
 
 
-
     onSubmit(e) {
 
         e.preventDefault();
-
-
 
         const aboutUs = {
 
@@ -108,11 +84,7 @@ export default class Edita extends Component {
 
         }
 
-
-
         console.log(aboutUs);
-
-
 
         axios.post('http://localhost:4800/aboutUs/update/' + this.props.match.params.id, aboutUs)
 
@@ -124,88 +96,55 @@ export default class Edita extends Component {
 
     }
 
-
-
     render() {
-
         return (
-
             <div className='addvehiclePage'>
-
                 <br />
-
                 <div className='container' id="addRegisterForm">
-
                     <h3 className="addvehicleTitle">Update About Us Details</h3>
-
                     <form onSubmit={this.onSubmit}>
-
                         <div className="form-group">
-
                         <label className="textColour">Company Description: </label>
                             <input type="text"
                                 required
                                 className="form-control"
                                 value={this.state.comDesc}
                                 onChange={this.onChangeComDesc}
-
                             />
-
                         </div>
-
                         <div className="form-group">
-
                         <label className="textColour">Vission: </label>
                             <input type="text"
                                 required
                                 className="form-control"
                                 value={this.state.vision}
                                 onChange={this.onChangeVision}
-
                             />
-
                         </div>
-
                         <div className="form-group">
-
                         <label className="textColour">Mission: </label>
-                            <input
-                                type="text"
+                            <input type="text"
+                                required
                                 className="form-control"
                                 value={this.state.mission}
                                 onChange={this.onChangeMission}
-
                             />
-
                         </div>
-
-                       
-
                         <div className="form-group">
-
                         <label className="textColour">Latest Nesw: </label>
                             <input
                                 type="text"
+                                required
                                 className="form-control"
                                 value={this.state.lNews}
                                 onChange={this.onChangeLnews}
-
                             />
-
                         </div>
-
-                      
-
                         <br />
-
                         <div className="form-group">
-
-                            <input type="submit" value="UPDATE" className="btn btn-primary" />
-
+                            <input type="submit" value="Update Details" className="btn btn-primary" />
                         </div>
-
                     </form>
-
                 </div></div>
 
         )

@@ -50,7 +50,7 @@ import Edita from "./components/pages/aboutUs/edita";
 import Editm from "./components/pages/team/editm";
 import Viewp from "./components/pages/staff/viewp";
 import Viewa from "./components/pages/aboutUs/viewa";
-import RegisterVaccine from "./components/pages/staff/registerVaccine";
+import RegisterEmployee from "./components/pages/staff/registerEmployee";
 import AboutUs from "./components/pages/aboutUs/aboutUs";
 import RegisterTeam from "./components/pages/team/registerTeam";
 import Viewm from "./components/pages/team/viewm";
@@ -122,7 +122,7 @@ function App() {
        
 
 
-       <Route path="/registerVaccine" component={RegisterVaccine} />
+       <Route path="/registerEmployee" component={RegisterEmployee} />
        <Route path="/aboutUs" component={AboutUs} />
        <Route path='/searchteam' component={Searchteam} />
        <Route path='/searchemployee' component={Searchemployee} />

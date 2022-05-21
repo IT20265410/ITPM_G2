@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import swl from "sweetalert";
+import '../vehicle.css';
 //import './register.css';
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
@@ -104,7 +105,7 @@ export default class Viewm extends Component {
         }).then((willDelete) => {
             if (willDelete) {
                 axios.delete('http://localhost:4800/team/ ${id}').then((res) => {
-                    swl("Vehicle Deleted Succesfully.", {
+                    swl("Member Deleted Succesfully.", {
                         icon: "success",
                     });
                     this.setState({
@@ -135,36 +136,39 @@ export default class Viewm extends Component {
                 <center><h3 className="addcovid1Title">Team Member Details</h3></center>
                 <div className='container' id="viewMedicineForm">
 
-                <div className='row'>
-                       
-                        <div className='col-2 buttons'>
-                            <Link to="/registerTeam" type="button" className="btn btn-primary">
-                            <i className="far fa-plus-square"></i> &nbsp;&nbsp;
-                             ADD 
-                            </Link>
-                            
-                        </div>
-
-                        <div className="col-7 buttons">
-                            <Link onClick={() => this.exportPDF()} className="btn btn-warning">
-                            <FaIcons.FaFilePdf />    
-              &nbsp;&nbsp;Genarate Report
-            </Link>
-            <br />
-            <br />
-           
+                <div className="row">
+            <div className="col-2 buttons">
+              <Link to="/registerTeam" type="button" className="btn btn-primary">
+                <i className="far fa-plus-square"></i> &nbsp;&nbsp;Add Member
+              </Link>
+              <br />
+            </div>
+            <div className="col-3 buttons2">
+              <Link
+                onClick={() => this.exportPDF()}
+                className="btn btn-warning"
+              >
+                <FaIcons.FaFilePdf />
+                &nbsp;&nbsp;Genarate Report
+              </Link>
+              <br />
+              <br />
+            </div>
+            <div className="col-6 buttons2">
+              <div className="col-4 buttons" style={{ marginLeft: "500px" }}>
+                <Link
+                  to="/searchteam"
+                  type="button"
+                  className="btn btn-success"
+                >
+                  <FaIcons.FaSearch />
+                  &nbsp;&nbsp; Search Member
+                </Link>
+                <br />
+              </div>
+            </div>
           </div>
-                        
-                         <div className='col-3 buttons'>
-                            <Link to="/searchteam" type="button" className="btn btn-secondary">
-                            <FaIcons.FaSearch /> 
-                            &nbsp;&nbsp;
-                            Search Member
-                            </Link>
-                            
-                        </div>
-                
-          </div>
+          <br />
 
 
                 <table className="table" id="displayTable">

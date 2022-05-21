@@ -4,6 +4,7 @@ import axios from 'axios';
 //import './register.css';
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
+import '../vehicle.css';
 import * as FaIcons from 'react-icons/fa';
 
 const AboutUs = props => (
@@ -104,14 +105,14 @@ export default class Viewa extends Component {
         return (
             <div className='addvehiclePage' id="viewTable">
                 <br />
-                <center><h3 className="addcovid1Title">About Us</h3></center>
+                <center><h3 className="addTitle">About Us</h3></center>
                 <div className='container' id="viewMedicineForm">
 
                 <div className='row'>
                        
                         <div className='col-2 buttons'>
                             <Link to="/aboutUs" type="button" className="btn btn-primary">
-                            <i className="far fa-plus-square"></i> &nbsp;&nbsp;ADD 
+                            <i className="far fa-plus-square"></i> &nbsp;&nbsp;Add About
                             </Link>
                             
                         </div>
@@ -123,14 +124,8 @@ export default class Viewa extends Component {
             </Link>
             <br />
             <br />
-           
+          </div>    
           </div>
-                        
-                     
-                
-          </div>
-
-
                 <table className="table" id="displayTable">
                     <thead className="thead-light">
                      <tr id="tablist">
@@ -140,9 +135,6 @@ export default class Viewa extends Component {
                             <th className="viewlist">Mission<br/><br/></th>
                             <th className="viewlist">Latest News<br/><br/></th>
                             <th style={{ width: "120px" }} className="viewlist">Action<br/><br/></th>
-                         
-                      
-
                         </tr>
                     </thead>
                     <tbody>

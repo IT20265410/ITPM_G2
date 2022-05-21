@@ -98,8 +98,6 @@ export default class Viewcm extends Component {
         });
     };
 
-
-
     teamMembersList() {
         return this.state.team.map(currentteam => {
             return <Team team={currentteam} deleteTeam={this.deleteTeam} key={currentteam._id} />;
@@ -107,57 +105,42 @@ export default class Viewcm extends Component {
     }
 
 
-
-
-
-    
     render() {
         return (
             <div className='addAboutPage' id="viewTable">
                 <br />
-                <center><h1 className="addcovid1Title">More About Rathavahana.lk</h1></center>
-                <center><h3 className="addcovid1Title">Why Choose Us</h3></center>
-              
-                <div className='container' id="viewMedicineForm">
+                <center><h1 className="addTitle">More About Rathavahana.lk</h1></center>
+                <center><h3 className="addvehicleTitle">Why Choose Us</h3></center>
+                <br/>
+                <div className='container' id="viewRegisterForm">
 
                 <div className='row'>
-                       
-                     
-                
+                    
                    <center> <thead className="thead-light">
                         <tr id="tablist">
-                            <center><th > Vehicle hire in Sri Lanka is not an easy way to all, with Ratha vahana.lk  you can enjoy vehicle rental in Sri Lanka at the coolest budget ways.</th></center>
-                            <center><th >you can enjoy vehicle rental in Sri Lanka at the coolest budget ways.</th></center>
-                            <center><th >We believe in providing the highest level of services at the lowest price. 24/7 working time. So you can enjoy your ride anytime. </th></center>
-
+                            <center><th className="viewlist"> Vehicle hire in Sri Lanka is not an easy way to all, with Ratha vahana.lk  you can enjoy vehicle rental in Sri Lanka at the coolest budget ways.</th></center>
+                            <br/>
+                            <center><th className="viewlist">you can enjoy vehicle rental in Sri Lanka at the coolest budget ways.</th></center>
+                            <br/>
+                            <center><th className="viewlist">We believe in providing the highest level of services at the lowest price. 24/7 working time. So you can enjoy your ride anytime. </th></center>
+                            <br/>
                         </tr>
                     </thead>
                    </center> 
-            
-             
-                        
-                   
-                
+        
           </div>
-          <center><h1 className="addcovid1Title">Our Team</h1></center>
+          <center><h1 className="addTitle">Our Team</h1></center>
 
-
-          
                  <center>    <thead className="thead-light">
-                        <tr id="tablist">
-                           
-                         <th className="viewlist">  ****Name****</th>
-                           
-                         <center> <th className="viewlist">*****Description*****</th> </center> 
-                           
-
+                        <tr id="offerTable">
+                         <th className="offerTable">  ****Name****</th>          
+                          <th className="viewlist">*****Description*****</th> 
                         </tr>
                     </thead>
                     <tbody>
                         {this.teamMembersList()}
                     </tbody>
                     </center>
-
                     <br/>
                 
                <div className='row'>
@@ -166,9 +149,7 @@ export default class Viewcm extends Component {
                            <Link to="/viewc" type="button" className="btn btn-primary">
                             -Back
                            </Link>
-                           
                        </div></center> </div>
-                
             </div></div>
         )
     }

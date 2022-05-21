@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import '../vehicle.css';
+import * as FaIcons from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function SearchBar() {
     const [search, setSearch] = useState('');
@@ -26,15 +28,30 @@ function SearchBar() {
         <div className="addvehiclePage">
             <br />
             <div className='container' id="searchVehicleForm">
-                <h3 className="searchRegisterVaccineTitle">SEARCH EMPLOYEE DETAILS</h3>
+                <h3 className="searchRegisterTitle">SEARCH TEAM MEMBER DETAILS</h3>
                 <br /><br />
+                <div>
+            <div>
+              <Link to="/viewm" type="button" className="btn btn-primary">
+                <FaIcons.FaAngleLeft />
+                &nbsp;&nbsp; Back
+              </Link>
+              <br />
+            </div>
+          </div>
                 <h5>Enter Member Name to view Details </h5>
                 <br />
-                <input className="searchBar" type="text" placeholder="Search Team Member" onChange={(e) => {
-                    setSearch(e.target.value);
-                }} />
-                <br /><br />
-                <table className="table">
+                <input
+            className="searchBar"
+            type="text"
+            placeholder="Search..."
+            onChange={(e) => {
+              setSearch(e.target.value);
+            }}
+          />
+          <br />
+          <br />
+          <table id="offerTable" style={{ fontSize: "12pt" }}>
                     <thead className="thead-light">
                         <tr>
                             <th>Team Member Details</th>

@@ -18,7 +18,8 @@ const teamSchema = new Schema({
     nic: {
         type: String,
         required: true,
-        minlength: 10,
+        maxlength:12, 
+        minlength:9, 
         unique: true,
         trim: true,
     },

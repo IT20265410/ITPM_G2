@@ -26,7 +26,7 @@ function SearchBar() {
         <div className="addvehiclePage">
             <br />
             <div className='container' id="searchVehicleForm">
-                <h3 className="searchRegisterVaccineTitle">SEARCH EMPLOYEE DETAILS</h3>
+                <h3 className="searchRegisterEmployeeTitle">SEARCH EMPLOYEE DETAILS</h3>
                 <br /><br />
                 <h5>Enter Employee Name to view Details </h5>
                 <br />
