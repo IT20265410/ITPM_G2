@@ -21,7 +21,6 @@ function SearchBar() {
         )
     }, [search], register)
 
-
     return (
         <div className="addvehiclePage">
             <br />
@@ -57,3 +56,4 @@ function SearchBar() {
 }
 
 export default SearchBar;
+

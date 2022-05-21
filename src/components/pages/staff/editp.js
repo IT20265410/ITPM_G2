@@ -18,7 +18,6 @@ export default class Editp extends Component {
         this.onChangePassword = this.onChangePassword.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
-
         this.state = {
             name: '',
             address: '',
@@ -54,7 +53,6 @@ export default class Editp extends Component {
                 console.log(error);
             })
     }
-
     onChangeName(e) {
         this.setState({
             name: e.target.value
