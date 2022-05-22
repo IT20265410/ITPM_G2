@@ -17,4 +17,6 @@ covers the following functions.
 8. Team Member Details Management
 9. Contact Us section Management
 
-  
+By using this web application not only the staff members get advantages but also customers can have 
+a great experience. Nowadays having a system like this can be helped in various ways to make people 
+work effectively and efficiently.  
