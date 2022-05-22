@@ -15,6 +15,6 @@ covers the following functions.
 6. FAQ section Management
 7. About Us section Management
 8. Team Member Details Management
-9. Contact Us section Managemen 
+9. Contact Us section Management
 
   
